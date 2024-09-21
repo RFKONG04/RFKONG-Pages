@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微领袖影视-电视剧</title>
+    <style>
+        body {
+            background-color: #3c3c3c;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll;
+
+        }
+
+        ::-webkit-scrollbar {
+            width: 0%;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: transparent;
+        }
+
+        header {
+            background-color: #333;
+            padding: 1em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 1em;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .popup-content {
+            background-color: #3c3c3c;
+            color: #ffff;
+            width: 400px;
+            padding: 20px;
+            margin: 100px auto;
+            border-radius: 5px;
+        }
+
+        .close-btn {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .movie-list {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            max-width: auto;
+            max-height: auto;
+            padding: 20px;
+        }
+
+        .pc-list {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-gap: 20px;
+            max-width: auto;
+            max-height: auto;
+            padding: 20px;
+        }
+
+        .movie-card {
+            background-color: #ffffff40;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .movie-info {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .movie-title {
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .movie-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #2a5a76;
+            color: #fff;
+            font-size: 12px;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .movie-link:hover {
+            background-color: #0056b3;
+        }
+
+        .textp1 {
+            font-size: 16px;
+            text-align: center;
+            color: aquamarine;
+            margin: 10px;
+
+        }
+
+        .textp {
+            font-size: 13px;
+            text-align: center;
+            color: #ffff;
+            margin: 5 3px;
+
+        }
+
+        .mobile {
+            height: auto;
+            display: none;
+            background-color: #3c3c3c;
+        }
+
+        .desktop {
+            display: none;
+            background-color: #3c3c3c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mobile">
+        <header>
+            <nav>
+                <ul>
+                    <li><a style="color: aquamarine;">微领袖影视 - 电视剧</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="movie-list">
+            <div class="movie-card">
+                <img src="https://g.cloudimg.cc/2024/09/21/m1u92i.webp" alt="Movie Poster" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">三体2024</h3> <a
+                        href="https://yun.xknat.icu/s/MzBi5/video?name=%E7%AC%AC1%E9%9B%86.mp4&amp;share_path=%2F%E7%AC%AC1%E9%9B%86.mp4"
+                        class="movie-link">在线追剧</a>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="https://g.cloudimg.cc/2024/09/21/m1251g.webp" alt="Movie Poster" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">孤单又灿烂的神:鬼怪</h3> <a
+                        href="https://yun.xknat.icu/s/y0PSX/video?name=%E9%AC%BC%E6%80%AA1.mp4&share_path=%2F%E9%AC%BC%E6%80%AA1.mp4"
+                        class="movie-link">在线追剧</a>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="https://g.cloudimg.cc/2024/09/21/oz5grn.webp" alt="Movie Poster" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">学校2015:你是谁</h3> <a href="#" class="movie-link">更新中</a>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="https://g.cloudimg.cc/2024/09/21/oxjoa3.webp" alt="Movie Poster" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">凡人歌</h3> <a href="#" class="movie-link">更新中</a>
+                </div>
+            </div>
+        </div>
+        <div class="textp1">
+            <p>以下为其他视频分享内容仅供本站观看,禁止私自分享商用!</p>
+        </div>
+        <div class="movie-list">
+            <div class="movie-card">
+                <img src="https://g.cloudimg.cc/2024/09/21/ouew2f.webp" alt="Movie Poster" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">大明湖船景</h3> <a
+                        href="https://yun.xknat.icu/s/z5bHP/video?name=%E6%B5%8E%E5%8D%97%E5%A4%A7%E6%98%8E%E6%B9%96%E8%88%B9%E6%99%AF.mp4"
+                        class="movie-link">在线欣赏</a>
+                </div>
+            </div>
+            <div class="movie-card">
+                <img src="https://g.cloudimg.cc/2024/09/21/oufnnu.webp" alt="Movie Poster" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title">2024第33届奥运会开幕式</h3> <a
+                        href="https://yun.xknat.icu/s/Yxahp/video?name=2024%E5%B9%B4%E7%AC%AC33%E5%B1%8A%E5%B7%B4%E9%BB%8E%E5%A5%A5%E8%BF%90%E4%BC%9A%E5%BC%80%E5%B9%95%E5%BC%8F.mp4"
+                        class="movie-link">在线观看</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const popupTriggers = document.querySelectorAll('.popup-trigger');
+            const popups = document.querySelectorAll('.popup');
+            const closeButtons = document.querySelectorAll('.close-btn');
+
+            popupTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const popupId = this.getAttribute('data-popup');
+                    const popup = document.getElementById(popupId);
+                    popup.style.display = 'block';
+                });
+            });
+
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const popup = this.closest('.popup');
+                    popup.style.display = 'none';
+                });
+            });
+
+            window.addEventListener('click', function (e) {
+                popups.forEach(popup => {
+                    if (e.target === popup) {
+                        popup.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- 以下为电脑端页面 -->
+    <div class="desktop">
+        <h1 style="font-size:50px; color: #ffffff; text-align: center;margin: 10px;">404 Sorry ! 🫢</h1>
+        <p style="font-size:30px; color: #ffffff; text-align: center;">网站暂不支持电脑端访问</p>
+    </div>
+    <script>
+        if (window.innerWidth <= 700) {
+            document.querySelector('.mobile').style.display = 'block';
+        } else {
+            document.querySelector('.desktop').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
