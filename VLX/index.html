@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微领袖影视公益周项目</title>
+    <style>
+        body {
+            font-family: 幼圆, "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            background-image: url('background.jpg');
+            /* 预留背景图地址 */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            /* 半透明背景色 */
+            backdrop-filter: blur(10px);
+            /* 背景模糊效果 */
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            display: none;
+            /* 默认隐藏，按需显示 */
+        }
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #000;
+            /* 文字颜色 */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1;
+            margin-bottom: 20px;
+            color: #000;
+            /* 文字颜色 */
+        }
+
+        .alert {
+            color: rgb(0, 0, 0);
+            background-color: rgba(255, 255, 255, 0.8);
+            /* 半透明背景色 */
+            padding: 25px;
+            border-radius: 15px;
+            line-height: 1.8;
+            font-size: 20px;
+            font-weight: bold;
+            display: none;
+            /* 默认隐藏，按需显示 */
+        }
+
+        #countdown-text {
+            font-size: 20px;
+            color: #333;
+        }
+
+        footer {
+            font-size: 14px;
+            margin-top: 20px;
+            color: #000000;
+        }
+
+        footer a {
+            font-weight: bold;
+            color: #4a00ca;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="alert" class="alert"></div>
+
+    <div id="content" class="container">
+        <h1>微领袖影视·周周公益</h1>
+        <p>欢迎您 &nbsp;&bull;&nbsp;来到 &nbsp;&bull;&nbsp;微领袖影视</p>
+        <p>此项目为微领袖影视公益项目</p>
+        <p>我们仅只会保留这一专题一周时间供您欣赏。</p>
+        <p>一周之后，我们将上新新的专题 😉😊😆</p>
+        <p id="countdown-text"><span id="countdown">16</span> 秒后自动进入</p>
+        <footer>&copy; 2024 <a href="https://rfkong04.github.io">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
+    </div>
+
+    <script>
+        var count = 16;
+        var intervalId;
+
+        function startCountdown() {
+            intervalId = setInterval(function () {
+                count--;
+                document.getElementById("countdown").innerHTML = count;
+                if (count <= 0) {
+                    clearInterval(intervalId);
+                    window.location.href = "play.html"; // 自动跳转页面
+                }
+            }, 1000);
+        }
+
+        function stopCountdown() {
+            clearInterval(intervalId); // 停止倒计时
+        }
+
+        function isChromeBrowser() {
+            return /Chrome/i.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        }
+
+        function isWeChatBrowser() {
+            return /MicroMessenger/i.test(navigator.userAgent);
+        }
+
+        function isEdgeBrowser() {
+            return /Edg\//i.test(navigator.userAgent); // 检测 Edge 浏览器
+        }
+
+        // if (isEdgeBrowser()) {
+        //     document.getElementById('alert').style.display = 'block'; // Edge 浏览器提示
+        //     document.getElementById('alert').innerHTML = '目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！';
+        // } else 
+        if (isWeChatBrowser()) {
+            document.getElementById('alert').style.display = 'block'; // 微信浏览器提示
+            document.getElementById('alert').innerHTML = '目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！';
+        } else if (isChromeBrowser()) {
+            document.getElementById('content').style.display = 'block'; // Chrome 浏览器可以访问
+            startCountdown(); // 开启倒计时
+        }
+        // else {
+        //     document.getElementById('alert').style.display = 'block'; // 其他浏览器提示（如需）
+        //     document.getElementById('alert').innerHTML = '该浏览器暂不支持访问<br>请使用 Chrome 浏览器！';
+        // }
+    </script>
+
+</body>
+
+</html>
