@@ -144,22 +144,33 @@
         }
 
         .video-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-
-        }
-
-        video {
+            position: relative;
             width: 100%;
-            border-radius: 15px;
+            padding-top: 50%;
         }
 
-        .controls {
-            display: flex;
-            justify-content: center;
-            padding: 10px;
+        .video-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height:auto;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: 20px;
         }
+
+        /* 嵌入的iframe样式，初始隐藏 */
+        .video-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height:90%;
+            display: none;
+            border-radius:20px;
+        }
+
 
         .gallery {
             display: flex;
@@ -324,19 +335,37 @@
         </div>
         <div class="right">
             <div class="video-container">
-                <video id="videoPlayer" controls preload="metadata"
-                    poster="https://g.cloudimg.cc/2024/10/16/x7ls4x.webp">
-                    <source src="https://cloud.06dn.com/api/v3/share/preview/gK9ouj?path=null" type="video/mp4">
-                    您的浏览器不支持视频标签。
-                </video>
+                <!-- 视频封面 -->
+                <img id="videoCover" src="https://g.cloudimg.cc/2024/10/16/x7ls4x.webp" alt="Video Cover"
+                    class="video-cover">
+
+                <!-- 嵌入的视频 iframe，初始隐藏 -->
+                <iframe id="videoIframe" width="100%" height="100%" src="https://cloud.06dn.com/api/v3/share/preview/gK9ouj?path=null"
+                    title="Embedded Video" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen class="video-iframe"></iframe>
             </div>
+
+            <script>
+                const cover = document.getElementById('videoCover');
+                const iframe = document.getElementById('videoIframe');
+
+                cover.addEventListener('click', function () {
+                    // 隐藏封面图片
+                    cover.style.display = 'none';
+                    // 显示嵌入的视频 iframe
+                    iframe.style.display = 'block';
+                });
+            </script>
+
+
         </div>
     </div>
 
     <footer class="footer">
         支持超清4K,如果卡顿请切换网络环境或缓存观看<br>
         影片大小约: 4GB,请注意流量消耗 🫠<br>
-        仅供学习网页编写与云存储研究 💕<br>
+        仅供学网页编写与云存储研究 💕<br>
         微领袖影视 · 周周公益 · 第一周
     </footer>
     <script>
