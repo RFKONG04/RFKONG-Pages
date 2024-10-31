@@ -47,6 +47,12 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--black-color);
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 ul {
