@@ -4,8 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>微领袖影视公益周项目</title>
+    <title>微领袖·周周公益</title>
     <style>
+        @font-face {
+            font-family: 'tb';
+            src: url('./assets/fonts/TaoBao.woff') format('woff');
+            font-style: 100px;
+        }
+
+        @font-face {
+            font-family: 'ali';
+            src: url('./assets/fonts/Alimama.woff2') format('woff2');
+            font-weight: 350;
+            font-style: normal;
+        }
+
         body {
             font-family: 幼圆, "Arial", sans-serif;
             margin: 0;
@@ -15,8 +28,7 @@
             align-items: center;
             height: 100vh;
             background-color: #f0f0f0;
-            background-image: url('background.jpg');
-            /* 预留背景图地址 */
+            background-image: url('https://g.cloudimg.cc/2024/10/31/x760lv.webp');
             background-size: cover;
             background-position: center;
         }
@@ -24,18 +36,29 @@
         .container {
             text-align: center;
             background-color: rgba(255, 255, 255, 0.2);
-            /* 半透明背景色 */
             backdrop-filter: blur(10px);
-            /* 背景模糊效果 */
             padding: 30px;
-            border-radius: 20px;
+            border-radius: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             max-width: 400px;
             display: none;
-            /* 默认隐藏，按需显示 */
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(10px);
+                padding: 30px;
+                border-radius: 25px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                max-width: 320px;
+                display: none;
+            }
         }
 
         h1 {
+            font-family: 'tb', sans-serif;
             font-size: 30px;
             margin-bottom: 20px;
             color: #000;
@@ -43,6 +66,7 @@
         }
 
         p {
+            font-family: 'ali', sans-serif;
             font-size: 18px;
             line-height: 1;
             margin-bottom: 20px;
@@ -76,7 +100,7 @@
 
         footer a {
             font-weight: bold;
-            color: #4a00ca;
+            color: #ffffff;
             text-decoration: none;
         }
     </style>
@@ -86,12 +110,12 @@
     <div id="alert" class="alert"></div>
 
     <div id="content" class="container">
-        <h1>微领袖影视·周周公益</h1>
+        <h1>微领袖·周周公益</h1>
         <p>欢迎您 &nbsp;&bull;&nbsp;来到 &nbsp;&bull;&nbsp;微领袖影视</p>
         <p>此项目为微领袖影视公益项目</p>
-        <p>我们仅只会保留这一专题一周时间供您欣赏。</p>
-        <p>一周之后，我们将上新新的专题 😉😊😆</p>
-        <p id="countdown-text"><span id="countdown">16</span> 秒后自动进入</p>
+        <p>我们仅会保留此专题一周时间供您欣赏</p>
+        <p>一周之后，我们将上新新的专题</p>
+        <p id="countdown-text"><span id="countdown">16</span> 秒后进入</p>
         <footer>&copy; 2024 <a href="https://rfkong04.github.io">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
     </div>
 
