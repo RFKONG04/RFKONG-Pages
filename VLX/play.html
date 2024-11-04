@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <link rel="stylesheet"
+        href="https://g.alicdn.com/apsara-media-box/imp-web-player/2.26.2/skins/default/aliplayer-min.css" />
+    <script type="text/javascript" charset="utf-8"
+        src="https://g.alicdn.com/apsara-media-box/imp-web-player/2.26.2/aliplayer-min.js"></script>
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <title>微领袖影视-白蛇:浮生</title>
     <style>
         * {
@@ -146,7 +153,6 @@
         .video-container {
             position: relative;
             width: 100%;
-            padding-top: 50%;
         }
 
         .video-cover {
@@ -154,7 +160,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height:auto;
+            height: auto;
             object-fit: cover;
             cursor: pointer;
             border-radius: 20px;
@@ -166,9 +172,9 @@
             top: 0;
             left: 0;
             width: 100%;
-            height:90%;
+            height: 90%;
             display: none;
-            border-radius:20px;
+            border-radius: 20px;
         }
 
 
@@ -205,7 +211,7 @@
             /* 偶数项向下排列 */
         }
 
-        /* 媒体查询：安卓端适配 */
+        /*phone*/
         @media (max-width: 700px) {
             .content {
                 flex-direction: column;
@@ -246,43 +252,6 @@
         <h1>白蛇:浮生</h1>
         <p>White Snake: Afloat</p>
     </div>
-
-    <!-- <div class="content">
-        <div class="left">
-            <div class="main-content">
-                <div class="title">白蛇:缘起</div>
-                <p>晚唐年间，国师发动民众大量捕蛇。前去刺杀国师的白蛇意外失忆，被捕蛇村少年阿宣救下。为帮助少女找回记忆，两人踏上了一段冒险旅程...
-                </p>
-            </div>
-        </div>
-        <div class="right">
-            <div class="video-container">
-                <video id="videoPlayer" controls preload="metadata"
-                    poster="https://g.cloudimg.cc/2024/10/16/yxqd1g.webp">
-                    <source src="https://yun.xknat.icu/f/835cX/WhiteS1.mp4" type="video/mp4">
-                    您的浏览器不支持视频标签。
-                </video>
-            </div>
-        </div>
-    </div>
-    <div class="content">
-        <div class="left">
-            <div class="main-content">
-                <div class="title">白蛇:青蛇劫起</div>
-                <p>南宋末年，小白为救许仙水漫金山，终被法海压在雷峰塔下。小青心生救姐执念死死纠缠法海，被法海打入诡异的修罗城幻境...
-                </p>
-            </div>
-        </div>
-        <div class="right">
-            <div class="video-container">
-                <video id="videoPlayer" controls preload="metadata"
-                    poster="https://g.cloudimg.cc/2024/10/16/yvr6st.webp">
-                    <source src="https://yun.xknat.icu/f/qXXFz/WhiteS2.mp4" type="video/mp4">
-                    您的浏览器不支持视频标签。
-                </video>
-            </div>
-        </div>
-    </div> -->
     <div class="content">
         <div class="left">
             <div class="main-content">
@@ -335,28 +304,113 @@
         </div>
         <div class="right">
             <div class="video-container">
-                <!-- 视频封面 -->
-                <img id="videoCover" src="https://g.cloudimg.cc/2024/10/16/x7ls4x.webp" alt="Video Cover"
-                    class="video-cover">
-
-                <!-- 嵌入的视频 iframe，初始隐藏 -->
-                <iframe id="videoIframe" width="100%" height="100%" src="https://cloud.06dn.com/api/v3/share/preview/gK9ouj?path=null"
-                    title="Embedded Video" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen class="video-iframe"></iframe>
+                <div id="videoIframe" width="100%" height="100%">
+                    <div class="prism-player" id="player-con"></div>
+                    <script>
+                        var player = new Aliplayer({
+                            "id": "player-con",
+                            "source": "https://lz.qaiu.top/ce/cloud.06dn.com_s_gK9ouj",
+                            "width": "100%",
+                            "height": "350px",
+                            "autoplay": false,
+                            "isLive": false,
+                            "cover": "https://g.cloudimg.cc/2024/10/16/x7ls4x.webp",
+                            "rePlay": false,
+                            "playsinline": true,
+                            "isVBR": true,
+                            "preload": true,
+                            "autoPlayDelay": "5",
+                            "autoPlayDelayDisplayText": "微领袖影视·周周公益",
+                            "controlBarVisibility": "hover",
+                            "useH5Prism": true,
+                            "extraInfo": {
+                                "crossOrigin": "anonymous"
+                            },
+                            "skinLayout": [
+                                {
+                                    "name": "bigPlayButton",
+                                    "align": "blabs",
+                                    "x": 30,
+                                    "y": 80
+                                },
+                                {
+                                    "name": "H5Loading",
+                                    "align": "cc"
+                                },
+                                {
+                                    "name": "errorDisplay",
+                                    "align": "tlabs",
+                                    "x": 0,
+                                    "y": 0
+                                },
+                                {
+                                    "name": "infoDisplay"
+                                },
+                                {
+                                    "name": "tooltip",
+                                    "align": "blabs",
+                                    "x": 0,
+                                    "y": 56
+                                },
+                                {
+                                    "name": "thumbnail"
+                                },
+                                {
+                                    "name": "controlBar",
+                                    "align": "blabs",
+                                    "x": 0,
+                                    "y": 0,
+                                    "children": [
+                                        {
+                                            "name": "progress",
+                                            "align": "blabs",
+                                            "x": 0,
+                                            "y": 44
+                                        },
+                                        {
+                                            "name": "playButton",
+                                            "align": "tl",
+                                            "x": 15,
+                                            "y": 12
+                                        },
+                                        {
+                                            "name": "timeDisplay",
+                                            "align": "tl",
+                                            "x": 10,
+                                            "y": 7
+                                        },
+                                        {
+                                            "name": "fullScreenButton",
+                                            "align": "tr",
+                                            "x": 10,
+                                            "y": 12
+                                        },
+                                        {
+                                            "name": "subtitle",
+                                            "align": "tr",
+                                            "x": 15,
+                                            "y": 12
+                                        },
+                                        {
+                                            "name": "setting",
+                                            "align": "tr",
+                                            "x": 15,
+                                            "y": 12
+                                        },
+                                        {
+                                            "name": "volume",
+                                            "align": "tr",
+                                            "x": 5,
+                                            "y": 10
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                        );
+                    </script>
+                </div>
             </div>
-
-            <script>
-                const cover = document.getElementById('videoCover');
-                const iframe = document.getElementById('videoIframe');
-
-                cover.addEventListener('click', function () {
-                    // 隐藏封面图片
-                    cover.style.display = 'none';
-                    // 显示嵌入的视频 iframe
-                    iframe.style.display = 'block';
-                });
-            </script>
 
 
         </div>
