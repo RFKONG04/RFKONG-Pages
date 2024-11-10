@@ -1,472 +1,324 @@
-<!doctype html>
-<html lang="zh">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>微领袖影视</title>
-    <style>
-        body {
-            background-color: #3c3c3c;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            overflow-y: scroll;
-
-        }
-
-        ::-webkit-scrollbar {
-            width: 0%;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: transparent;
-        }
-
-        header {
-            background-color: #333;
-            padding: 1em;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 1em;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .popup-content {
-            background-color: #3c3c3c;
-            color: #ffff;
-            width: 400px;
-            padding: 20px;
-            margin: 100px auto;
-            border-radius: 5px;
-        }
-
-        .close-btn {
-            display: block;
-            margin-top: 10px;
-        }
-
-        .movie-list {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            grid-gap: 20px;
-            max-width: auto;
-            max-height: auto;
-            padding: 20px;
-        }
-
-        .pc-list {
-            margin-top: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            grid-gap: 20px;
-            max-width: auto;
-            max-height: auto;
-            padding: 20px;
-        }
-
-        .movie-card {
-            background-color: #ffffff40;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .movie-card:hover {
-            transform: scale(1.05);
-        }
-
-        .movie-poster {
-            width: 100%;
-            height: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .movie-info {
-            padding: 10px;
-            text-align: center;
-        }
-
-        .movie-title {
-            margin: 0;
-            font-size: 16px;
-            font-weight: bold;
-        }
-
-        .movie-link {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 16px;
-            background-color: #2a5a76;
-            color: #fff;
-            font-size: 12px;
-            text-decoration: none;
-            border-radius: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .movie-link:hover {
-            background-color: #0056b3;
-        }
-
-        .textp {
-            font-size: 13px;
-            text-align: center;
-            color: #ffff;
-            margin: 5 3px;
-
-        }
-
-        .mobile {
-            height: auto;
-            display: none;
-            background-color: #3c3c3c;
-        }
-
-        .desktop {
-            display: none;
-            background-color: #3c3c3c;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <div class="mobile">
-        <header>
-            <nav>
+    <div class="navbar">
+        <a href="#" class="logo">微领袖影视</a>
+        <ul>
+            <li><a href="#" class="active">首页</a></li>
+            <li><a href="https://rfkong04.github.io/VLX/index.html">周周公益</a></li>
+            <li><a href="./about.html">关于联系</a></li>
+        </ul>
+    </div>
+    <section>
+        <img src="./images/gE0rK6M.png" id="stars">
+        <img src="./images/vXnEvOx.png" id="moon">
+        <img src="./images/D7gDlYx.png" id="mountains-behind">
+        <h2 id="text">微领袖.&nbsp;Video Leader Xiu</h2>
+        <!-- <a href="#sec" id="btn">Explore</a> -->
+        <img src="./images/V0jN7KL.png" id="mountains-front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Hello!</h2>
+        <p>
+
+        </p>
+    </div>
+    <div class="movie-list">
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/nn4hd3.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">谈判专家</h3> <a
+                    href="#/63oh1/video?name=%E8%B0%88%E5%88%A4%E4%B8%93%E5%AE%B62024.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/nlxw6y.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">临时劫案</h3> <a
+                    href="#/k1VUW/video?name=%E4%B8%B4%E6%97%B6%E5%8A%AB%E6%A1%88.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/nqfji3.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">照明商店</h3> <a
+                    href="#/qX2Cb/video?name=%E7%85%A7%E6%98%8E%E5%95%86%E5%BA%97.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ee62b6061cb.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">传说</h3> <a href="#/a1Viz/video?name=%E4%BC%A0%E8%AF%B4.mkv"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ee608edbe04.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">特技狂人</h3> <a
+                    href="#/53xT1/video?name=%E7%89%B9%E6%8A%80%E7%8B%82%E4%BA%BA.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/ntkrl2.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">唐伯虎点秋香</h3> <a
+                    href="#/83NsY/video?name=%E5%94%90%E4%BC%AF%E8%99%8E%E7%82%B9%E7%A7%8B%E9%A6%99.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/ni426r.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">新世界</h3> <a href="#/eE6FK/video?name=%E6%96%B0%E4%B8%96%E7%95%8C.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/niqf2t.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">无间道</h3> <a href="#/LrMfm/video?name=%E6%97%A0%E9%97%B4%E9%81%93.mkv"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ee65331f1d2.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">飞行员2024</h3> <a
+                    href="#/XaaH6/video?name=%E9%A3%9E%E8%A1%8C%E5%91%982024.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ee657daffb3.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">惊天魔盗团</h3> <a
+                    href="#/4p5c8/video?name=%E6%83%8A%E5%A4%A9%E9%AD%94%E7%9B%97%E5%9B%A2.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ed7170c4b15.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">荒野机器人</h3> <a href="#" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/mfcbci.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">逆行人生</h3> <a href="#" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ed7085dccd5.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">默杀</h3> <a href="#/2Y8FL/video?name=%E9%BB%98%E6%9D%80.mkv"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c86db469392.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">恐龙当家</h3> <a
+                    href="#/0agiZ/video?name=%E6%81%90%E9%BE%99%E5%BD%93%E5%AE%B6.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c882b507a0e.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">欢迎来到我身边</h3> <a
+                    href="#/QaYtW/video?name=%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E8%BA%AB%E8%BE%B92024K.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c883679e655.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">沙漏</h3> <a href="#/vZpCE/video?name=%E6%B2%99%E6%BC%8F.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c8847e60334.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">穿过月亮的旅行</h3> <a
+                    href="#/oQgCZ/video?name=%E7%A9%BF%E8%BF%87%E6%9C%88%E4%BA%AE%E7%9A%84%E6%97%85%E8%A1%8C.mkv"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c88580a40a6.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">海关战线</h3> <a
+                    href="#/B8DSj/video?name=%E6%B5%B7%E5%85%B3%E5%89%8D%E7%BA%BF.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c8863be79be.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">登月大计划</h3> <a
+                    href="#/N2pH2/video?name=%E7%99%BB%E6%9C%88%E5%A4%A7%E8%AE%A1%E5%88%92.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/08/23/yrtky1.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">加菲猫家族</h3> <a
+                    href="#/waRUG/video?name=%E5%8A%A0%E8%8F%B2%E7%8C%AB%E5%AE%B6%E6%97%8F.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/08/28/uduozd.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">年会不能停</h3> <a href="#/z5LhP/video?name=年会不能停.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf018248a44.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">云边有个小卖部</h3> <a href="#/2Y4UL/video?name=云边有个小卖部.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/08/28/ui3lxu.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">若虫:森林之歌</h3> <a href="#/ggluL/video?name=若虫森林之歌.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/08/28/ujq9oi.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">海蒂和爷爷</h3> <a href="#/dMySe/video?name=Heidi.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf02d9814e2.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">孤注一掷</h3> <a href="#/Re6FK/video?name=孤注一掷.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf03b26fd54.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">独行月球</h3> <a href="#/A8jf0/video?name=独行月球.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf0498693a0.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">流浪地球2</h3> <a href="#/y1duX/video?name=流浪地球2.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf244ecf808.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">周处除三害</h3> <a href="#/lmAHL/video?name=周处除三害.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf24f920ddc.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">白雪公主之魔镜魔镜</h3> <a href="#/5RKU1/video?name=白雪公主之魔镜魔镜.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf29c189e25.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">前途海量</h3> <a href="#/N2Ns2/video?name=前途海量.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf25e4cf3c5.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">九龙城寨之围城</h3> <a
+                    href="#/waDHG/video?name=%E4%B9%9D%E9%BE%99%E5%9F%8E%E5%AF%A8%E4%B9%8B%E5%9B%B4%E5%9F%8E.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf26aa86c70.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">悟空传</h3> <a href="#/MzWf5/video?name=%E6%82%9F%E7%A9%BA%E4%BC%A0.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains-behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains-front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+    <div class="blank-2">
+        <div class="footer">
+            <div class="column">
+                <h3>关于</h3>
                 <ul>
-                    <li><a style="color: aquamarine;">微领袖影视</a></li>
-                    <li><a href="index2.html" data-popup="popup2">电视剧</a></li>
-                    <li><a href="#" class="popup-trigger" data-popup="popup1">关于</a></li>
-                    <!-- <li><a href="#" data-popup="popup3">其他</a></li> -->
+                    <li><a>超凡如风科技-微领袖</a></li>
+                    <li><a>如果您喜欢此网站,可以分享它</a></li>
+                    <li><a href="https://rfkong.github.io">超凡如风科技-新官网</a></li>
                 </ul>
-            </nav>
-        </header>
-        <div id="popup1" class="popup">
-            <div class="popup-content">
-                <h2>Hi~ o(*￣▽￣*)ブ</h2>
-                <p>欢迎你的来访</p>
-                <p>目前刚刚创建</p>
-                <p>仅供学习研究，请勿盗用</p>
-                <p>资源均个人搜集，侵权可联系删除</p> <button class="close-btn">关闭</button>
+            </div>
+            <div class="column">
+                <h3>声明</h3>
+                <ul>
+                    <li><a>仅用于学习Web前端技术</a></li>
+                    <li><a>和学习云存储技术研究</a></li>
+                    <li><a>此网页所有资源均来自网页</a></li>
+                    <li><a>本网站不存储任何有关资源</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>联系方式</h3>
+                <ul>
+                    <li><a>R.F.KONG@QQ.com</a></li>
+                    <li><a>QQ:1013677077</a></li>
+                    <li><a>@RFKONG</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>其他</h3>
+                <ul>
+                    <li><a>本网页由R.F.KONG编写</a></li>
+                    <li><a>由 ChatGPT-4o 提供技术支持</a></li>
+                    <li><a>Bing搜索“微领袖影视”</a></li>
+                    <li><a>Over💕</a></li>
+                </ul>
             </div>
         </div>
-        <!-- <div id="popup3" class="popup">
-            <div class="popup-content">
-                <h2>项目3内容</h2>
-                <p>这里是项目3的详细信息。</p>
-                <button class="close-btn">关闭</button>
-            </div>
-        </div> -->
-        <div class="movie-list">
-            <div class="movie-card">
-                <img src="https://g.cloudimg.cc/2024/09/21/nn4hd3.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">谈判专家</h3> <a
-                        href="#/63oh1/video?name=%E8%B0%88%E5%88%A4%E4%B8%93%E5%AE%B62024.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://g.cloudimg.cc/2024/09/21/nlxw6y.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">临时劫案</h3> <a
-                        href="#/k1VUW/video?name=%E4%B8%B4%E6%97%B6%E5%8A%AB%E6%A1%88.mp4" class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://g.cloudimg.cc/2024/09/21/nqfji3.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">照明商店</h3> <a
-                        href="#/qX2Cb/video?name=%E7%85%A7%E6%98%8E%E5%95%86%E5%BA%97.mp4" class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/09/66ee62b6061cb.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">传说</h3> <a href="#/a1Viz/video?name=%E4%BC%A0%E8%AF%B4.mkv"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/09/66ee608edbe04.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">特技狂人</h3> <a
-                        href="#/53xT1/video?name=%E7%89%B9%E6%8A%80%E7%8B%82%E4%BA%BA.mp4" class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://g.cloudimg.cc/2024/09/21/ntkrl2.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">唐伯虎点秋香</h3> <a
-                        href="#/83NsY/video?name=%E5%94%90%E4%BC%AF%E8%99%8E%E7%82%B9%E7%A7%8B%E9%A6%99.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://g.cloudimg.cc/2024/09/21/ni426r.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">新世界</h3> <a href="#/eE6FK/video?name=%E6%96%B0%E4%B8%96%E7%95%8C.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://g.cloudimg.cc/2024/09/21/niqf2t.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">无间道</h3> <a href="#/LrMfm/video?name=%E6%97%A0%E9%97%B4%E9%81%93.mkv"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/09/66ee65331f1d2.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">飞行员2024</h3> <a
-                        href="#/XaaH6/video?name=%E9%A3%9E%E8%A1%8C%E5%91%982024.mp4" class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/09/66ee657daffb3.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">惊天魔盗团</h3> <a
-                        href="#/4p5c8/video?name=%E6%83%8A%E5%A4%A9%E9%AD%94%E7%9B%97%E5%9B%A2.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/09/66ed7170c4b15.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">荒野机器人</h3> <a href="#" class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://g.cloudimg.cc/2024/09/21/mfcbci.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">逆行人生</h3> <a href="#" class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/09/66ed7085dccd5.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">默杀</h3> <a href="#/2Y8FL/video?name=%E9%BB%98%E6%9D%80.mkv"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66c86db469392.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">恐龙当家</h3> <a
-                        href="#/0agiZ/video?name=%E6%81%90%E9%BE%99%E5%BD%93%E5%AE%B6.mp4" class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66c882b507a0e.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">欢迎来到我身边</h3> <a
-                        href="#/QaYtW/video?name=%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E8%BA%AB%E8%BE%B92024K.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66c883679e655.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">沙漏</h3> <a href="#/vZpCE/video?name=%E6%B2%99%E6%BC%8F.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66c8847e60334.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">穿过月亮的旅行</h3> <a
-                        href="#/oQgCZ/video?name=%E7%A9%BF%E8%BF%87%E6%9C%88%E4%BA%AE%E7%9A%84%E6%97%85%E8%A1%8C.mkv"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66c88580a40a6.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">海关战线</h3> <a
-                        href="#/B8DSj/video?name=%E6%B5%B7%E5%85%B3%E5%89%8D%E7%BA%BF.mp4" class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66c8863be79be.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">登月大计划</h3> <a
-                        href="#/N2pH2/video?name=%E7%99%BB%E6%9C%88%E5%A4%A7%E8%AE%A1%E5%88%92.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://g.cloudimg.cc/2024/08/23/yrtky1.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">加菲猫家族</h3> <a
-                        href="#/waRUG/video?name=%E5%8A%A0%E8%8F%B2%E7%8C%AB%E5%AE%B6%E6%97%8F.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://g.cloudimg.cc/2024/08/28/uduozd.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">年会不能停</h3> <a href="#/z5LhP/video?name=年会不能停.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66cf018248a44.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">云边有个小卖部</h3> <a href="#/2Y4UL/video?name=云边有个小卖部.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://g.cloudimg.cc/2024/08/28/ui3lxu.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">若虫:森林之歌</h3> <a href="#/ggluL/video?name=若虫森林之歌.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://g.cloudimg.cc/2024/08/28/ujq9oi.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">海蒂和爷爷</h3> <a href="#/dMySe/video?name=Heidi.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66cf02d9814e2.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">孤注一掷</h3> <a href="#/Re6FK/video?name=孤注一掷.mp4" class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66cf03b26fd54.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">独行月球</h3> <a href="#/A8jf0/video?name=独行月球.mp4" class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66cf0498693a0.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">流浪地球2</h3> <a href="#/y1duX/video?name=流浪地球2.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66cf244ecf808.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">周处除三害</h3> <a href="#/lmAHL/video?name=周处除三害.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66cf24f920ddc.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">白雪公主之魔镜魔镜</h3> <a href="#/5RKU1/video?name=白雪公主之魔镜魔镜.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66cf29c189e25.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">前途海量</h3> <a href="#/N2Ns2/video?name=前途海量.mp4" class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66cf25e4cf3c5.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">九龙城寨之围城</h3> <a
-                        href="#/waDHG/video?name=%E4%B9%9D%E9%BE%99%E5%9F%8E%E5%AF%A8%E4%B9%8B%E5%9B%B4%E5%9F%8E.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-            <div class="movie-card">
-                <img src="https://qximg.cn/i/24/08/66cf26aa86c70.webp" alt="Movie Poster" class="movie-poster">
-                <div class="movie-info">
-                    <h3 class="movie-title">悟空传</h3> <a href="#/MzWf5/video?name=%E6%82%9F%E7%A9%BA%E4%BC%A0.mp4"
-                        class="movie-link">敬请期待</a>
-                </div>
-            </div>
-        </div>
-        <div class="textp">
-            <p>超凡如风科技-微领袖影视</p>
-            <p>我们通常会在每周六更新影视</p>
-        </div>
-
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const popupTriggers = document.querySelectorAll('.popup-trigger');
-            const popups = document.querySelectorAll('.popup');
-            const closeButtons = document.querySelectorAll('.close-btn');
-
-            popupTriggers.forEach(trigger => {
-                trigger.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const popupId = this.getAttribute('data-popup');
-                    const popup = document.getElementById(popupId);
-                    popup.style.display = 'block';
-                });
-            });
-
-            closeButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const popup = this.closest('.popup');
-                    popup.style.display = 'none';
-                });
-            });
-
-            window.addEventListener('click', function (e) {
-                popups.forEach(popup => {
-                    if (e.target === popup) {
-                        popup.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
-
-    <!-- 以下为电脑端页面 -->
-    <div class="desktop">
-        <h1 style="font-size:50px; color: #ffffff; text-align: center;margin: 10px;">404 Sorry ! 🫢</h1>
-        <p style="font-size:30px; color: #ffffff; text-align: center;">网站暂不支持电脑端访问</p>
-    </div>
-    <script>
-        if (window.innerWidth <= 700) {
-            document.querySelector('.mobile').style.display = 'block';
-        } else {
-            document.querySelector('.desktop').style.display = 'block';
-        }
-    </script>
 </body>
 
 </html>
