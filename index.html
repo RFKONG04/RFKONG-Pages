@@ -2,168 +2,111 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R.F.KONG - 别派如风</title>
-    <link rel="canonical" href="https://RFKONG.github.io">
-    <meta name="description" content="R.F.KONG的个人主页 超凡如风科技工作小组，感谢您的来访！">
-    <meta itemprop="image"
-        content="https://rfkong.art.blog/wp-content/uploads/2023/03/cropped-picsart_22-12-27_17-31-55-802.png">
-    <link rel="icon" href="https://RFKONG.github.io/pic/ai.svg" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/style.css">
+   <title>超凡如风科技 | C.F.R.F.KONG</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="超凡如风科技(C.F.R.F.KONG)是一个新兴的网络科技组织，我们致力于打造一个干安全、绿色、开放、共享的科技平台，为您提供最优科技解决方案。">
+   <meta name="keywords" content="超凡如风科技,C.F.R.F.KONG,RFKONG,科技,R.F.KONG,如风科技,超凡如风,CFRF,开放平台,chaofanrufeng,超凡如风科技工作小组">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+   <meta property="og:title" content="超凡如风科技 | 极致的品质，极致的科技，极致的体验！">
+   <meta name="twitter:title" content="超凡如风科技 | 极致的品质，极致的科技，极致的体验！">
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+   <!--=============== SAKURA CSS ===============-->
+   <link rel="stylesheet" href="assets/css/sakura.min.css">
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <div class="navbar">
-        <div class="navbar-items">
-            <div class="logo-container">
-                <img src="./pic/logo.png" alt="超凡如风科技" class="logo">
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <div class="nav container">
+         <a href="#" class="nav__logo">
+            <i class="ri-ancient-gate-line"></i>
+            <span>超凡如风科技</span>
+         </a>
+
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li>
+                  <a href="https://RFKONG.github.io" class="nav__link">新官网</a>
+               </li>
+
+               <li>
+                  <a href="./with/index.html" class="nav__link">微领袖影视</a>
+               </li>
+
+               <li>
+                  <a href="./VLX/index.html" class="nav__link">微领袖·周周公益</a>
+               </li>
+
+               <li>
+                  <a href="https://rfzh.art.blog" class="nav__link">如风智绘</a>
+               </li>
+
+               <li>
+                  <a href="https://20class4.school.blog" class="nav__link">高中回忆录</a>
+               </li>
+
+               <li>
+                  <a href="./assets/about.html" class="nav__link">关于我们</a>
+               </li>
+            </ul>
+
+            <!-- Close button-->
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-large-line"></i>
             </div>
-            <button class="menu-toggle">☰</button>
-            <nav class="nav-links">
-                <a href="./VLX">微领袖影视</a>
-                <a href="https://rfkong04.github.io/VLX">微领袖影视·周周公益</a>
-                <a href="http://rfzh.art.blog/">如风智绘</a>
-                <a href="http://rfgpt.code.blog/">RF.GPT AI</a>
-                <a href="http://scs.data.blog/">S.C.S</a>
-                <a href="http://20class4.school.blog/">高中回忆博客</a>
-            </nav>
-        </div>
-    </div>
+         </div>
 
+         <!-- Toggle button -->
+         <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-apps-2-line"></i>
+         </div>
+      </div>
+   </header>
 
-    <video autoplay muted loop class="video-background">
-        <source src="https://down.p2.blog/wp-content/uploads/2024/10/m.mp4" type="video/mp4">
-        <source src="./pic/m.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+   <main class="main">
+      <section class="home">
+         <img src="assets/img/img-bg.svg" alt="image" class="home__bg">
 
-    <div class="container">
-        <div class="dynamic-text">
-            <span id="text-display"></span>
-        </div>
+         <div class="home__container container">
+            <div class="home__data">
+               <h1 class="home__title">Welcome To <br>C.F.R.F.KONG</h1>
+               <h2 class="home__title">欢迎来到😍<br>超凡如风科技</h2>
 
-        <!-- 标题内容 -->
-        <div class="main-content" style="display: none;">
-            <h1>别派如风</h1>
-            <p>R.F.KONG</p>
-        </div>
-
-        <script>
-            const text = "一战到底,永不言弃!";
-            let index = 0;
-
-            function typeEffect() {
-                const display = document.getElementById("text-display");
-
-                if (index < text.length) {
-                    display.textContent += text[index];  // 逐字追加显示
-                    index++;
-                    setTimeout(typeEffect, 200);  // 控制打字速度
-                } else {
-                    setTimeout(() => {
-                        // 隐藏打字机效果内容，显示标题内容
-                        document.querySelector('.dynamic-text').style.display = 'none';
-                        document.querySelector('.main-content').style.display = 'block';
-                    }, 1000); // 等待1秒后切换内容
-                }
-            }
-
-            typeEffect();  // 启动打字效果
-        </script>
-
-    </div>
-
-    <div class="blank">
-        <div class="tia">
-            <h2>欢迎来到R.F.KONG的个人主页</h2>
-        </div>
-        <div class="tia">
-            <P>我的英文名叫:R.F.KONG</P>
-        </div>
-        <div class="tia">
-            <p>我的中文名叫:别派如风</p>
-        </div>
-        <div class="tia">
-            <p>如果你感兴趣，可以了网页解一下顶栏的项目</p>
-        </div>
-    </div>
-    <!-- <div class="tis">
-        <h2>旗下产品</h2>
-    </div>
-    <div class="movie-list">
-        <div class="movie-card">
-            <img src="./pic/vlx.png" alt="Movie Poster" class="movie-poster">
-            <div class="movie-info">
-                <h3 class="movie-title">微领袖</h3>
-                <a href="./VLX/index.html" class="movie-link">了解更多</a>
+               <p class="home__description">
+                  目前本页面仅作为引导页面
+               </p>
             </div>
-        </div>
-        <div class="movie-card">
-            <img src="./pic/gpt.png" alt="Movie Poster" class="movie-poster">
-            <div class="movie-info">
-                <h3 class="movie-title">RF.GPT</h3>
-                <a href="http://rfgpt.code.blog/" class="movie-link">了解更多</a>
-            </div>
-        </div>
-        <div class="movie-card">
-            <img src="./pic/zh.png" alt="Movie Poster" class="movie-poster">
-            <div class="movie-info">
-                <h3 class="movie-title">如风智绘</h3>
-                <a href="http://rfzh.art.blog/" class="movie-link">了解更多</a>
-            </div>
-        </div>
-        <div class="movie-card">
-            <img src="./pic/scs.png" alt="Movie Poster" class="movie-poster">
-            <div class="movie-info">
-                <h3 class="movie-title">S.C.S</h3>
-                <a href="http://scs.data.blog/" class="movie-link">了解更多</a>
-            </div>
-        </div>
-    </div> -->
 
-    <div class="blank-2">
-        <div class="footer">
-            <div class="column">
-                <h3>旗下</h3>
-                <ul>
-                    <li><a href="./VLX/index.html">微领袖影视</a></li>
-                    <li><a href="#">如风智绘</a></li>
-                    <li><a href="#">Movie Bar</a></li>
-                </ul>
+            <div class="home__images">
+               <img src="assets/img/img-1.svg" alt="image" class="home__img-1">
+               <img src="assets/img/img-2.svg" alt="image" class="home__img-2">
+               <img src="assets/img/img-3.svg" alt="image" class="home__img-3">
+               <img src="assets/img/img-4.svg" alt="image" class="home__img-4">
+               <img src="assets/img/img-5.svg" alt="image" class="home__img-5">
+               <img src="assets/img/img-6.svg" alt="image" class="home__img-6">
             </div>
-            <div class="column">
-                <h3>关于我们</h3>
-                <ul>
-                    <li><a href="#">是一个团队</a></li>
-                    <li><a href="#">是一群少年</a></li>
-                    <li><a href="#">没事写着玩的，纯属爱好</a></li>
-                </ul>
-            </div>
-            <div class="column">
-                <h3>联系方式</h3>
-                <ul>
-                    <li><a href="#">R.F.KONG@QQ.com</a></li>
-                    <li><a href="#">QQ:1018413847</a></li>
-                    <li><a href="#">@RFKONG</a></li>
-                </ul>
-            </div>
-            <div class="column">
-                <h3>其他</h3>
-                <ul>
-                    <li><a href="#">本网页由R.F.KONG编写</a></li>
-                    <li><a href="#">由 ChatGPT-4o 提供技术支持</a></li>
-                    <li><a href="#">Over💕</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+         </div>
+      </section>
+   </main>
 
-    <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function () {
-            document.querySelector('.nav-links').classList.toggle('show');
-        });
-    </script>
+   <!-- Sakura petals -->
+   <div class="sakura-petals"></div>
+
+   <!--=============== GSAP ===============-->
+   <script src="assets/js/gsap.min.js"></script>
+
+   <!--=============== SAKURA JS ===============-->
+   <script src="assets/js/sakura.min.js"></script>
+
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
 </body>
 
 </html>
