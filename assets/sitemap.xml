@@ -9,22 +9,29 @@
 <url>
  <loc>https://rfkong04.github.io/with/index.html</loc>
  <priority>0.3</priority>
- <lastmod>2024-10-31</lastmod>
- <changefreq>weekly</changefreq>
+ <lastmod>2024-11-15</lastmod>
+ <changefreq>daily</changefreq>
 </url>
 
 <url>
  <loc>https://rfkong04.github.io/VLX/index.html</loc>
  <priority>0.3</priority>
- <lastmod>2024-10-31</lastmod>
- <changefreq>weekly</changefreq>
+ <lastmod>2024-11-15</lastmod>
+ <changefreq>daily</changefreq>
+</url>
+
+<url>
+ <loc>https://rfkong04.github.io/assets/about.html</loc>
+ <priority>0.3</priority>
+ <lastmod>2024-11-15</lastmod>
+ <changefreq>daily</changefreq>
 </url>
 
 <url>
  <loc>https://rfkong04.github.io</loc>
  <priority>0.3</priority>
- <lastmod>2024-10-31</lastmod>
- <changefreq>weekly</changefreq>
+ <lastmod>2024-11-15</lastmod>
+ <changefreq>daily</changefreq>
 </url>
 
 </urlset>
