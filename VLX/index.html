@@ -1,198 +1,350 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <title>微领袖影视 | 极致观影体验尽在VLX!</title>
+    <meta name="description"
+        content="微领袖影视（Video Leader Xiu, VLX）是‘超凡如风科技’旗下的影视组织，致力于打造一个干净、安全、绿色、开放、免费的观影平台，提供极致的观影体验，远离广告，专注高清画质。">
+    <meta name="keywords" content="微领袖影视, Video Leader Xiu, VLX, 影视平台, 高清观影, 公益影视, 免费视频, 绿色观影, 免费平台">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./logo.png" type="image/x-icon">
-    <title>微领袖·周周公益</title>
-    <style>
-        @font-face {
-            font-family: 'tb';
-            src: url('/assets/fonts/TaoBao.woff') format('woff');
-            font-style: 100px;
-        }
 
-        @font-face {
-            font-family: 'ali';
-            src: url('/assets/fonts/Alimama.woff2') format('woff2');
-            font-weight: 350;
-            font-style: normal;
-        }
+    <!-- 网站Logo -->
+    <link rel="icon" href="./css/favicon.ico" type="image/x-icon">
 
-        body {
-            font-family: 'ali', "Arial", sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            background-image: url('https://g.cloudimg.cc/2024/10/31/x760lv.webp');
-            background-size: cover;
-            background-position: center;
-        }
+    <!-- 网站图标 (用于搜索引擎优化和社交媒体展示) -->
+    <meta property="og:image" content="https:rfkong.github.io/to/og-image.jpg">
+    <meta name="twitter:image" content="https:rfkong.github.io/to/twitter-image.jpg">
 
-        .container {
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            display: none;
-        }
+    <!-- 网站名称 (用于社交媒体分享时显示) -->
+    <meta property="og:title" content="微领袖影视 | 极致观影体验，免费观影平台">
+    <meta name="twitter:title" content="微领袖影视 | 极致观影体验，免费观影平台">
 
-        @media (max-width: 700px) {
-            .container {
-                text-align: center;
-                background-color: rgba(255, 255, 255, 0.2);
-                backdrop-filter: blur(10px);
-                padding: 30px;
-                border-radius: 25px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                max-width: 320px;
-                display: none;
-            }
-        }
+    <!-- 网站描述 (用于社交媒体分享时显示) -->
+    <meta property="og:description"
+        content="微领袖影视（Video Leader Xiu, VLX）是‘超凡如风科技’旗下的影视组织，致力于打造一个干净、安全、绿色、开放、免费的观影平台，提供极致的观影体验，远离广告和盗版，专注极致画质。">
+    <meta name="twitter:description"
+        content="微领袖影视（Video Leader Xiu, VLX）是‘超凡如风科技’旗下的影视组织，致力于打造一个干净、安全、绿色、开放、免费的观影平台，提供极致的观影体验，远离广告和盗版，专注极致画质。">
 
-        h1 {
-            font-family: 'tb', sans-serif;
-            font-size: 30px;
-            margin-bottom: 20px;
-            color: #000;
-            /* 文字颜色 */
-        }
+    <!-- 网站类型 (例如电影/视频平台) -->
+    <meta property="og:type" content="website">
 
-        p {
-            font-family: 'ali', sans-serif;
-            font-size: 18px;
-            line-height: 1;
-            margin-bottom: 20px;
-            color: #000;
-            /* 文字颜色 */
-        }
+    <!-- Twitter Card设置 (推特的卡片式显示) -->
+    <meta name="twitter:card" content="summary_large_image">
 
-        .alert {
-            color: rgb(0, 0, 0);
-            background-color: rgba(255, 255, 255, 0.8);
-            /* 半透明背景色 */
-            padding: 25px;
-            border-radius: 15px;
-            line-height: 1.8;
-            font-size: 20px;
-            font-weight: bold;
-            display: none;
-            /* 默认隐藏，按需显示 */
-        }
-
-        #countdown-text {
-            font-size: 20px;
-            color: #333;
-        }
-
-        footer {
-            font-size: 14px;
-            margin-top: 20px;
-            color: #000000;
-        }
-
-        footer a {
-            font-weight: bold;
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .movie-info {
-            padding: 15px;
-            text-align: center;
-        }
-
-        .movie-link {
-            display: inline-block;
-            margin-top: 12px;
-            padding: 8px 16px;
-            background-color: #000000;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: background-color 0.3s ease;
-        }
-
-        .movie-link:hover {
-            background-color: #ff9999;
-        }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>微领袖影视 - VLX</title>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <div id="alert" class="alert"></div>
+    <div class="navbar">
+        <a href="#" class="logo">微领袖影视</a>
+        <ul>
+            <li><a class="active">首页</a></li>
+            <li><a href="./index2.html">电视剧</a></li>
+            <li><a href="https://rfkong04.github.io/VLX/index.html">周周公益</a></li>
+            <li><a href="./about.html">关于联系</a></li>
+        </ul>
+    </div>
+    <section>
+        <img src="./images/gE0rK6M.png" id="stars">
+        <img src="./images/vXnEvOx.png" id="moon">
+        <img src="./images/D7gDlYx.png" id="mountains-behind">
+        <h2 id="text">微领袖.&nbsp;Video Leader Xiu</h2>
+        <!-- <a href="#sec" id="btn">Explore</a> -->
+        <img src="./images/V0jN7KL.png" id="mountains-front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Hello!</h2>
+        <p>
 
-    <div id="content" class="container">
-        <h1>微领袖·周周公益</h1>
-        <p>欢迎您 &nbsp;&bull;&nbsp;来到 &nbsp;&bull;&nbsp;微领袖影视</p>
-        <p>此项目为微领袖影视公益项目</p>
-        <p>我们仅会保留此专题?周时间供您欣赏</p>
-        <p>一周之后，我们将上新新的专题</p>
-        <p id="countdown-text"><span id="countdown">16</span> 秒后进入</p>
-        <footer>&copy; 2024 <a href="https://rfkong04.github.io">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
-        <div class="movie-info">
-            <a href="./play.html" class="movie-link">前往第1期</a>
-            <a href="./play2.html" class="movie-link">前往第2期</a>
+        </p>
+    </div>
+    <div class="movie-list">
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/nn4hd3.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">谈判专家</h3> <a
+                    href="#/63oh1/video?name=%E8%B0%88%E5%88%A4%E4%B8%93%E5%AE%B62024.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/nlxw6y.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">临时劫案</h3> <a href="#/k1VUW/video?name=%E4%B8%B4%E6%97%B6%E5%8A%AB%E6%A1%88.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/nqfji3.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">照明商店</h3> <a href="#/qX2Cb/video?name=%E7%85%A7%E6%98%8E%E5%95%86%E5%BA%97.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ee62b6061cb.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">传说</h3> <a href="#/a1Viz/video?name=%E4%BC%A0%E8%AF%B4.mkv"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ee608edbe04.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">特技狂人</h3> <a href="#/53xT1/video?name=%E7%89%B9%E6%8A%80%E7%8B%82%E4%BA%BA.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/ntkrl2.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">唐伯虎点秋香</h3> <a
+                    href="#/83NsY/video?name=%E5%94%90%E4%BC%AF%E8%99%8E%E7%82%B9%E7%A7%8B%E9%A6%99.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/ni426r.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">新世界</h3> <a href="#/eE6FK/video?name=%E6%96%B0%E4%B8%96%E7%95%8C.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/niqf2t.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">无间道</h3> <a href="#/LrMfm/video?name=%E6%97%A0%E9%97%B4%E9%81%93.mkv"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ee65331f1d2.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">飞行员2024</h3> <a href="#/XaaH6/video?name=%E9%A3%9E%E8%A1%8C%E5%91%982024.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ee657daffb3.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">惊天魔盗团</h3> <a
+                    href="#/4p5c8/video?name=%E6%83%8A%E5%A4%A9%E9%AD%94%E7%9B%97%E5%9B%A2.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ed7170c4b15.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">荒野机器人</h3> <a href="#" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/09/21/mfcbci.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">逆行人生</h3> <a href="#" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/09/66ed7085dccd5.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">默杀</h3> <a href="#/2Y8FL/video?name=%E9%BB%98%E6%9D%80.mkv"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c86db469392.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">恐龙当家</h3> <a href="#/0agiZ/video?name=%E6%81%90%E9%BE%99%E5%BD%93%E5%AE%B6.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c882b507a0e.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">欢迎来到我身边</h3> <a
+                    href="#/QaYtW/video?name=%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%88%91%E8%BA%AB%E8%BE%B92024K.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c883679e655.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">沙漏</h3> <a href="#/vZpCE/video?name=%E6%B2%99%E6%BC%8F.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c8847e60334.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">穿过月亮的旅行</h3> <a
+                    href="#/oQgCZ/video?name=%E7%A9%BF%E8%BF%87%E6%9C%88%E4%BA%AE%E7%9A%84%E6%97%85%E8%A1%8C.mkv"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c88580a40a6.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">海关战线</h3> <a href="#/B8DSj/video?name=%E6%B5%B7%E5%85%B3%E5%89%8D%E7%BA%BF.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66c8863be79be.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">登月大计划</h3> <a
+                    href="#/N2pH2/video?name=%E7%99%BB%E6%9C%88%E5%A4%A7%E8%AE%A1%E5%88%92.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/08/23/yrtky1.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">加菲猫家族</h3> <a
+                    href="#/waRUG/video?name=%E5%8A%A0%E8%8F%B2%E7%8C%AB%E5%AE%B6%E6%97%8F.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/08/28/uduozd.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">年会不能停</h3> <a href="#/z5LhP/video?name=年会不能停.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf018248a44.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">云边有个小卖部</h3> <a href="#/2Y4UL/video?name=云边有个小卖部.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/08/28/ui3lxu.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">若虫:森林之歌</h3> <a href="#/ggluL/video?name=若虫森林之歌.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://g.cloudimg.cc/2024/08/28/ujq9oi.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">海蒂和爷爷</h3> <a href="#/dMySe/video?name=Heidi.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf02d9814e2.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">孤注一掷</h3> <a href="#/Re6FK/video?name=孤注一掷.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf03b26fd54.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">独行月球</h3> <a href="#/A8jf0/video?name=独行月球.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf0498693a0.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">流浪地球2</h3> <a href="#/y1duX/video?name=流浪地球2.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf244ecf808.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">周处除三害</h3> <a href="#/lmAHL/video?name=周处除三害.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf24f920ddc.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">白雪公主之魔镜魔镜</h3> <a href="#/5RKU1/video?name=白雪公主之魔镜魔镜.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf29c189e25.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">前途海量</h3> <a href="#/N2Ns2/video?name=前途海量.mp4" class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf25e4cf3c5.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">九龙城寨之围城</h3> <a
+                    href="#/waDHG/video?name=%E4%B9%9D%E9%BE%99%E5%9F%8E%E5%AF%A8%E4%B9%8B%E5%9B%B4%E5%9F%8E.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
+        </div>
+        <div class="movie-card">
+            <img src="https://qximg.cn/i/24/08/66cf26aa86c70.webp" alt="Movie Poster" class="movie-poster">
+            <div class="movie-info">
+                <h3 class="movie-title">悟空传</h3> <a href="#/MzWf5/video?name=%E6%82%9F%E7%A9%BA%E4%BC%A0.mp4"
+                    class="movie-link">敬请期待</a>
+            </div>
         </div>
     </div>
-
     <script>
-        var count = 16;
-        var intervalId;
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains-behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains-front');
+        let header = document.querySelector('header');
 
-        function startCountdown() {
-            intervalId = setInterval(function () {
-                count--;
-                document.getElementById("countdown").innerHTML = count;
-                if (count <= 0) {
-                    clearInterval(intervalId);
-                    window.location.href = "play3.html"; // 自动跳转页面
-                }
-            }, 1000);
-        }
-
-        function stopCountdown() {
-            clearInterval(intervalId); // 停止倒计时
-        }
-
-        function isChromeBrowser() {
-            return /Chrome/i.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        }
-
-        function isWeChatBrowser() {
-            return /MicroMessenger/i.test(navigator.userAgent);
-        }
-
-        function isEdgeBrowser() {
-            return /Edg\//i.test(navigator.userAgent); // 检测 Edge 浏览器
-        }
-
-        // if (isEdgeBrowser()) {
-        //     document.getElementById('alert').style.display = 'block'; // Edge 浏览器提示
-        //     document.getElementById('alert').innerHTML = '目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！';
-        // } else 
-        // if (isWeChatBrowser()) {
-        //     document.getElementById('alert').style.display = 'block'; // 微信浏览器提示
-        //     document.getElementById('alert').innerHTML = '目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！';
-        // } else 
-        if (isChromeBrowser()) {
-            document.getElementById('content').style.display = 'block'; // Chrome 浏览器可以访问
-            startCountdown(); // 开启倒计时
-        }
-        // else {
-        //     document.getElementById('alert').style.display = 'block'; // 其他浏览器提示（如需）
-        //     document.getElementById('alert').innerHTML = '该浏览器暂不支持访问<br>请使用 Chrome 浏览器！';
-        // }
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
     </script>
-
+    <div class="blank-2">
+        <div class="footer">
+            <div class="column">
+                <h3>关于</h3>
+                <ul>
+                    <li><a>超凡如风科技-微领袖</a></li>
+                    <li><a>如果您喜欢此网站,可以分享它</a></li>
+                    <li><a href="https://rfkong.github.io">超凡如风科技-新官网</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>声明</h3>
+                <ul>
+                    <li><a>仅用于学习Web前端技术</a></li>
+                    <li><a>和学习云存储技术研究</a></li>
+                    <li><a>此网页所有资源均来自网页</a></li>
+                    <li><a>本网站不存储任何有关资源</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>联系方式</h3>
+                <ul>
+                    <li><a>R.F.KONG@QQ.com</a></li>
+                    <li><a>QQ:1013677077</a></li>
+                    <li><a>@RFKONG</a></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>其他</h3>
+                <ul>
+                    <li><a>本网页由R.F.KONG编写</a></li>
+                    <li><a>由 ChatGPT-4o 提供技术支持</a></li>
+                    <li><a>Bing搜索“微领袖影视”</a></li>
+                    <li><a>Over💕</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
