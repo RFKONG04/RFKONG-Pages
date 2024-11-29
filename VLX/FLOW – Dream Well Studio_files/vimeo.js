@@ -6,7 +6,7 @@
     
         playButton.addEventListener('click', () => {
             // Set the Vimeo embed URL
-            vimeoEmbed.src = `http://wanyue-cloud.xbjstd.cn:5212/f/b2mul/Flow.mp4`;
+            vimeoEmbed.src = `http://wanyue-cloud.xbjstd.cn:5212/f/RM1HJ/inf.html`;
     
             // Show the popup
             popup.style.display = 'flex';
