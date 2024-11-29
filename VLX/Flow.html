@@ -29,6 +29,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./FLOW – Dream Well Studio_files/style.css">
   <title>FLOW – 猫猫的奇幻漂流</title>
+  <style>
+    .video-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+      max-width: 900px;
+      width: 100%;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .video-controls {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .button {
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 25px;
+      background:black;
+      color: white;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    }
+  </style>
 </head>
 
 <body style="overflow: auto;">
@@ -110,14 +148,32 @@
   </a>
 
   <div id="trailer" class="trailer">
-    <div class="play-button" id="playButton"><span class="right-pointing-triangle">&nbsp;</span></div>
-    <img src="./FLOW – Dream Well Studio_files/Flow_54.jpg" class="thumbnail">
-  </div>
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <span class="close-button" id="closeButton"></span>
-      <iframe id="vimeoEmbed" src="http://wanyue-cloud.xbjstd.cn:5212/f/RM1HJ/inf.html" frameborder="0" allow="autoplay;"></iframe>
+    <div class="video-container">
+      <video id="videoPlayer" controls>
+        <source src="http://wanyue-cloud.xbjstd.cn:5212/f/b2mul/Flow.mp4" type="video/mp4">
+        您的浏览器不支持 HTML5 视频。
+      </video>
+      <div class="video-controls">
+        <button class="button" onclick="playVideo()">播放</button>
+        <button class="button" onclick="pauseVideo()">暂停</button>
+        <button class="button" onclick="navigateToPage()">跳转视频</button>
+      </div>
     </div>
+
+    <script>
+      const video = document.getElementById("videoPlayer");
+
+      function playVideo() {
+        video.play();
+      }
+
+      function pauseVideo() {
+        video.pause();
+      }
+      function navigateToPage() {
+        window.location.href = "http://wanyue-cloud.xbjstd.cn:5212/f/kGrIM/inf.html";
+      }
+    </script>
   </div>
 
   <div id="synopsis">Cat is a solitary animal, but as its home is devastated by a great flood, he finds refuge on a boat
@@ -175,7 +231,8 @@
     <img class="onlydesktop" src="./FLOW – Dream Well Studio_files/billingblock.svg">
     <img class="onlymobile" src="./FLOW – Dream Well Studio_files/billingblock-logos.svg">
   </div>
-  <p class="footer"><small>此网页由 Flow.movie 修改而来,仅供影视分享<br>任何商用侵权行为由使用者个人承担<br>网页中的一切资源皆来自互联网<br>网页非原创,如有侵权请联系删除</small></p>
+  <p class="footer"><small>此网页由 Flow.movie 修改而来,仅供影视分享<br>任何商用侵权行为由使用者个人承担<br>网页中的一切资源皆来自互联网<br>网页非原创,如有侵权请联系删除</small>
+  </p>
 
   <script src="./FLOW – Dream Well Studio_files/script.js"></script>
   <script src="./FLOW – Dream Well Studio_files/vimeo.js"></script>
