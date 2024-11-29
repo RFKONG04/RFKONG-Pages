@@ -112,12 +112,12 @@
 
         .movie-link {
             display: inline-block;
-            margin-top: 12px;
-            padding: 8px 16px;
+            margin:3px;
+            padding:10px;
             background-color: #000000;
             color: #fff;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius:20px;
             transition: background-color 0.3s ease;
         }
 
@@ -139,8 +139,10 @@
         <p id="countdown-text"><span id="countdown">16</span> 秒后进入</p>
         <footer>&copy; 2024 <a href="https://rfkong04.github.io">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
         <div class="movie-info">
-            <a href="./play.html" class="movie-link">前往第1期</a>
-            <a href="./play2.html" class="movie-link">前往第2期</a>
+            <p>往期专题:</p>
+            <a href="./play.html" class="movie-link">第1期</a>
+            <a href="./play2.html" class="movie-link">第2期</a>
+            <a href="./play3.html" class="movie-link">第3期</a>
         </div>
     </div>
 
@@ -154,7 +156,7 @@
                 document.getElementById("countdown").innerHTML = count;
                 if (count <= 0) {
                     clearInterval(intervalId);
-                    window.location.href = "play3.html"; // 自动跳转页面
+                    window.location.href = "Flow.html"; // 自动跳转页面
                 }
             }, 1000);
         }
