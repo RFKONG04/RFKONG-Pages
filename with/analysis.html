@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./css/logo.png" type="image/x-icon">
+	<title>微解析</title>
+	<link href="https://cdn.bootcss.com/bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		body {
+			background-image: url('https://www.helloimg.com/i/2024/12/14/675d7e85500b6.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center;
+			font-family: Arial, sans-serif;
+			color: #fff;
+		}
+
+		.container {
+			max-width: 888px;
+			margin-top: 10%;
+			background: rgba(255, 255, 255, 0.265);
+			border-radius: 30px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			padding: 20px 30px;
+			color: #333;
+		}
+
+		.header {
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		.header h1 {
+			font-size: 2.0rem;
+			font-style: normal;
+			color: #000000;
+		}
+
+		.header small {
+			font-size: 1rem;
+			color: #d6d6d6;
+		}
+
+		.form-group label {
+			font-weight: bold;
+		}
+
+		.btn-primary {
+			background-color: #007bff7f;
+			border-color: #007bff;
+			border-radius: 20px;
+			padding: 10px;
+		}
+
+		.btn-primary:hover {
+			background-color: #0056b3;
+			border-color: #0056b3;
+		}
+
+		.footer {
+			text-align: center;
+			margin-top: 20px;
+			color: #ffffff;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>微解析</h1>
+			<small>输入视频地址，快速播放</small>
+		</div>
+		<form class="form-horizontal" method="post">
+			<div class="form-group">
+				<label for="url">视频地址</label>
+				<input type="url" class="form-control" id="url" name="url" placeholder="请输入视频地址" required>
+			</div>
+			<div class="form-group">
+				<label for="apiSelect">选择接口</label>
+				<select class="form-control" id="apiSelect">
+					<option value="https://jx.m3u8.tv/jiexi/?url=">API 1</option>
+					<option value="https://www.yemu.xyz/?url=">API 2</option>
+					<option value="https://jx.xmflv.com/?url=">API 3</option>
+					<option value="https://dm.xmflv.com:4433/?url=">API 4</option>
+				</select>
+			</div>
+			<div class="text-center">
+				<button type="button" id="play" class="btn btn-primary">开始解析</button>
+			</div>
+		</form>
+	</div>
+	<div class="footer">
+		<small>所有接口均来自互联网，本网站不存储任何资源</small><br>
+		<small>请不要相信视频中和跳转网站的任何广告,造成的任何后果自负</small><br>
+		<small>© 2024 微解析. All Rights Reserved.</small>
+	</div>
+
+	<script src="https://cdn.bootcss.com/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+	<script>
+		$("#play").click(function () {
+			const api = $("#apiSelect").val();
+			const url = $("#url").val();
+			if (!url || !/^http.*$/.test(url)) {
+				alert('请输入有效的视频地址！');
+				return;
+			}
+			window.open(api + url, '_blank');
+		});
+	</script>
+</body>
+
+</html>
