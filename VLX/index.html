@@ -16,7 +16,7 @@
         @font-face {
             font-family: 'ali';
             src: url('/assets/fonts/Alimama.woff2') format('woff2');
-            font-weight: 350;
+            font-weight: 300;
             font-style: normal;
         }
 
@@ -28,10 +28,25 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
-            background-image: url('https://g.cloudimg.cc/2024/10/31/x760lv.webp');
-            background-size: cover;
-            background-position: center;
+            background-color: #d1d1d1;
+            background:
+                linear-gradient(45deg, rgba(255, 154, 158, 0.8), rgba(250, 208, 196, 0.8), rgba(161, 196, 253, 0.8), rgba(194, 233, 251, 0.8), rgba(255, 204, 153, 0.8), rgba(255, 230, 189, 0.8));
+            background-size: 400% 400%;
+            animation: flowAnimation 12s ease infinite;
+        }
+
+        @keyframes flowAnimation {
+            0% {
+                background-position: 0% 50%, 100% 50%, 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%, 0% 50%, 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%, 100% 50%, 0% 50%;
+            }
         }
 
         .container {
@@ -112,12 +127,12 @@
 
         .movie-link {
             display: inline-block;
-            margin:3px;
-            padding:10px;
+            margin: 3px;
+            padding: 8px;
             background-color: #000000;
             color: #fff;
             text-decoration: none;
-            border-radius:20px;
+            border-radius: 20px;
             transition: background-color 0.3s ease;
         }
 
@@ -137,12 +152,13 @@
         <p>我们仅会保留此专题?周时间供您欣赏</p>
         <p>一周之后，我们将上新新的专题</p>
         <p id="countdown-text"><span id="countdown">16</span> 秒后进入</p>
-        <footer>&copy; 2024 <a href="https://rfkong04.github.io">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
+        <footer>&copy; 2024 <a href="https://rfkong.us.kg">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
         <div class="movie-info">
             <p>往期专题:</p>
             <a href="./play.html" class="movie-link">第1期</a>
             <a href="./play2.html" class="movie-link">第2期</a>
             <a href="./play3.html" class="movie-link">第3期</a>
+            <a href="./Flow.html" class="movie-link">第4期</a>
         </div>
     </div>
 
@@ -156,7 +172,7 @@
                 document.getElementById("countdown").innerHTML = count;
                 if (count <= 0) {
                     clearInterval(intervalId);
-                    window.location.href = "Flow.html"; // 自动跳转页面
+                    window.location.href = "duye.html"; // 自动跳转页面
                 }
             }, 1000);
         }
