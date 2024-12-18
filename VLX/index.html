@@ -116,7 +116,7 @@
 
         footer a {
             font-weight: bold;
-            color: #ffffff;
+            color: #0052b1c3;
             text-decoration: none;
         }
 
@@ -149,17 +149,17 @@
         <h1>微领袖·周周公益</h1>
         <p>欢迎您 &nbsp;&bull;&nbsp;来到 &nbsp;&bull;&nbsp;微领袖影视</p>
         <p>此项目为微领袖影视公益项目</p>
-        <p>我们仅会保留此专题?周时间供您欣赏</p>
+        <p>我们仅会保留此专题1周时间供您欣赏</p>
         <p>一周之后，我们将上新新的专题</p>
         <p id="countdown-text"><span id="countdown">16</span> 秒后进入</p>
-        <footer>&copy; 2024 <a href="https://rfkong.us.kg">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
-        <div class="movie-info">
+        <footer>&copy; 2024 <a href="https://cfrf.us.kg">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
+        <!-- <div class="movie-info">
             <p>往期专题:</p>
             <a href="./play.html" class="movie-link">第1期</a>
             <a href="./play2.html" class="movie-link">第2期</a>
             <a href="./play3.html" class="movie-link">第3期</a>
             <a href="./Flow.html" class="movie-link">第4期</a>
-        </div>
+        </div> -->
     </div>
 
     <script>
@@ -197,11 +197,10 @@
         //     document.getElementById('alert').style.display = 'block'; // Edge 浏览器提示
         //     document.getElementById('alert').innerHTML = '目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！';
         // } else 
-        // if (isWeChatBrowser()) {
-        //     document.getElementById('alert').style.display = 'block'; // 微信浏览器提示
-        //     document.getElementById('alert').innerHTML = '目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！';
-        // } else 
-        if (isChromeBrowser()) {
+        if (isWeChatBrowser()) {
+            document.getElementById('alert').style.display = 'block'; // 微信浏览器提示
+            document.getElementById('alert').innerHTML = '目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！';
+        } else if (isChromeBrowser()) {
             document.getElementById('content').style.display = 'block'; // Chrome 浏览器可以访问
             startCountdown(); // 开启倒计时
         }
