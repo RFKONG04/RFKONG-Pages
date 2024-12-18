@@ -1,37 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-       http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
- <loc>http://cfrf.us.kg/with/index.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-11</lastmod>
- <changefreq>daily</changefreq>
-</url>
+  <!-- 首页 (超凡如风科技) -->
+  <url>
+    <loc>https://cfrf.us.kg/</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-<url>
- <loc>http://cfrf.us.kg/VLX/index.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-11</lastmod>
- <changefreq>daily</changefreq>
-</url>
+  <!-- 微领袖影视 -->
+  <url>
+    <loc>https://cfrf.us.kg/with/index.html</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
- <loc>http://cfrf.us.kg/assets/about.html</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-11</lastmod>
- <changefreq>daily</changefreq>
-</url>
+  <!-- 微领袖·周周公益 -->
+  <url>
+    <loc>https://cfrf.us.kg/VLX/index.html</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
- <loc>http://cfrf.us.kg</loc>
- <priority>0.3</priority>
- <lastmod>2024-12-11</lastmod>
- <changefreq>daily</changefreq>
-</url>
+  <!-- 如风智绘 -->
+  <url>
+    <loc>https://rfzh.art.blog</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- s.c.s -->
+  <url>
+    <loc>https://scs.data.blog</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- RF.GPT AI -->
+  <url>
+    <loc>https://rfgpt.code.blog</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 关于我们 -->
+  <url>
+    <loc>https://cfrf.us.kg/assets/about.html</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
 </urlset>
