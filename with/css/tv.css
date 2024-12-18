@@ -177,7 +177,7 @@ section img#mountains-front {
 @media only screen and (max-width: 600px) {
     #text {
         position: absolute;
-        right: -270px;
+        right: -80px;
         color: #fff;
         white-space: nowrap;
         font-size: 3.3em;
