@@ -10,13 +10,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.461)), url('https://www.helloimg.com/i/2024/12/14/675d7e85500b6.png');
-            background-size: cover;
             background-position: center;
             font-family: 'Roboto', sans-serif;
             color: #fff;
             margin: 0;
             padding: 0;
+            background:
+                linear-gradient(45deg, rgb(255, 166, 169), rgba(190, 255, 218, 0.8), rgba(177, 226, 255, 0.8), rgba(210, 186, 255, 0.8), rgba(98, 128, 250, 0.8), rgba(165, 247, 255, 0.8));
+            background-size: 200% 300%;
+            animation: flowAnimation 20s ease infinite;
+        }
+
+        @keyframes flowAnimation {
+            0% {
+                background-position: 0% 50%, 100% 50%, 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%, 0% 50%, 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%, 100% 50%, 0% 50%;
+            }
         }
 
         .container {
@@ -29,7 +45,7 @@
         }
 
         .card {
-            background: rgba(0, 0, 0, 0.644);
+            background: rgba(0, 0, 0, 0.623);
             border-radius: 25px;
             padding: 30px;
             max-width: 500px;
@@ -46,6 +62,7 @@
             font-size: 2rem;
             font-weight: 700;
             color: #fff;
+            background-color: transparent;
         }
 
         .card-body {
@@ -64,13 +81,14 @@
             color: #fff;
         }
 
-        .form-control, .form-control:focus {
+        .form-control,
+        .form-control:focus {
             border-radius: 20px;
             padding: 12px;
             margin-top: 10px;
             border: none;
             outline: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .form-control:focus {
@@ -78,8 +96,9 @@
             box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
         }
 
-        .form-control[readonly], select.form-control {
-			height:auto;
+        .form-control[readonly],
+        select.form-control {
+            height: auto;
             appearance: none;
             -webkit-appearance: none;
             background-image: url('data:image/svg+xml;utf8,<svg fill="%23fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
@@ -88,7 +107,7 @@
         }
 
         select.form-control option {
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             color: #fff;
             padding: 10px 20px;
         }
@@ -115,7 +134,7 @@
 
         .footer {
             margin-top: 30px;
-            color: #fff;
+            color: #a9a9a9;
             font-size: 0.9rem;
             text-align: center;
         }
@@ -140,9 +159,11 @@
                 padding: 15px;
                 width: 90%;
             }
+
             .card-header {
                 font-size: 1.5rem;
             }
+
             .btn-primary {
                 font-size: 1rem;
                 padding: 10px 20px;
@@ -163,7 +184,8 @@
                 <form id="videoForm">
                     <div class="form-group">
                         <label for="url">视频地址</label>
-                        <input type="url" class="form-control" id="url" name="url" aria-label="视频URL" placeholder="请输入视频地址" required>
+                        <input type="url" class="form-control" id="url" name="url" aria-label="视频URL"
+                            placeholder="请输入视频地址" required>
                         <small class="form-text text-muted">例如：http://example.com/video.mp4</small>
                     </div>
                     <div class="form-group">
@@ -182,7 +204,7 @@
         <div class="footer">
             <small>所有接口均来自互联网，本网站不存储任何资源。</small><br>
             <small>请注意视频广告，点击跳转网站请自行判断。</small><br>
-            <small>© 2024 微解析. All Rights Reserved.</small>
+            <small>© 2025 微解析. All Rights Reserved.</small>
         </div>
     </div>
 
@@ -192,7 +214,7 @@
             try {
                 url = new URL(string);
             } catch (_) {
-                return false;  
+                return false;
             }
             return url.protocol === "http:" || url.protocol === "https:";
         }
