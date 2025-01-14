@@ -3,7 +3,7 @@
 
   <!-- 首页 (超凡如风科技) -->
   <url>
-    <loc>https://site.rfkong.top</loc>
+    <loc>https://www.rfkong.top</loc>
     <lastmod>2024-12-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- 微领袖影视 -->
   <url>
-    <loc>https://site.rfkong.top/with/index.html</loc>
+    <loc>https://www.rfkong.top/with</loc>
     <lastmod>2024-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -19,7 +19,7 @@
 
   <!-- 微领袖·周周公益 -->
   <url>
-    <loc>https://site.rfkong.top/VLX/index.html</loc>
+    <loc>https://www.rfkong.top/VLX</loc>
     <lastmod>2024-12-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -51,7 +51,7 @@
 
   <!-- 关于我们 -->
   <url>
-    <loc>https://site.rfkong.top/assets/about.html</loc>
+    <loc>https://www.rfkong.top/assets/about.html</loc>
     <lastmod>2024-12-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
