@@ -71,6 +71,71 @@ img {
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
+.footer {
+  padding: 2rem 0;
+  background-color: var(--body-color);
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer__info {
+  text-align: left;
+}
+
+.footer__copyright {
+  font-size: .875rem;
+  color: var(--text-color);
+}
+
+.footer__slogan {
+  font-size: .875rem;
+  color: var(--text-color-light);
+  margin-top: .25rem;
+}
+
+.footer__links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer__links a {
+  color: var(--text-color);
+  transition: color .4s;
+}
+
+.footer__links a:hover {
+  color: var(--first-color);
+}
+
+.footer__social {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer__social a {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  transition: color .4s;
+}
+
+.footer__social a:hover {
+  color: var(--first-color);
+}
+
+.sakura-petals {
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
 .container {
   max-width: 1120px;
   margin-inline: 1.5rem;
