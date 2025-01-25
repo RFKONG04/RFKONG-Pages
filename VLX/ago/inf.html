@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毒液3 | player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .video-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            max-width: 720px;
+            width: 100%;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .video-controls {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-container">
+        <video id="videoPlayer" controls>
+            <source src="http://wanyue-cloud.xbjstd.cn:5212/f/nwjH4/dy3.mkv" type="video/mp4">
+            您的浏览器不支持 HTML5 视频。
+        </video>
+        <div><small>如果还是不显示那就是您的显示器不适配了</small><br>
+            <small>请切换设备观看吧😘</small>
+        </div>
+    </div>
+</body>
+
+</html>
