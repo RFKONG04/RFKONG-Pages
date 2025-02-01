@@ -33,6 +33,13 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- 云盘 -->
+  <url>
+    <loc>https://vps.rfkong.top</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- s.c.s -->
   <url>
     <loc>https://scs.data.blog</loc>
