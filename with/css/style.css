@@ -283,7 +283,7 @@ section img#mountains-front {
 .blank-2 {
     text-align: center;
     width: 100%;
-    min-height: 30vh;
+    min-height: 15vh;
     background-color: rgba(255, 255, 255, 0.705);
 }
 
@@ -291,46 +291,45 @@ section img#mountains-front {
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
-    /* 允许换行以适应小屏幕 */
     justify-content: center;
-    /* 确保内容在所有屏幕上居中 */
+    background: rgba(185, 185, 185, 0.9);
 }
 
 .footer .column {
-    flex: 1 1 200px;
+    flex: 1;
+    min-width: 200px;
     max-width: 300px;
-    padding: 0 20px;
-    box-sizing: border-box;
-
+    padding: 20px;
+    text-align: center;
 }
 
 .footer .column h3 {
-    font-family: 'tb', sans-serif;
     color: #2b1055;
-    text-align: center;
-    padding: 10px;
-    margin-bottom: 1.5rem;
+    font-size: 1.2em;
     font-weight: 600;
+    margin-bottom: 15px;
 }
 
-.footer .column ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
+.footer .column p {
+    color: #333;
+    font-size: 0.9em;
+    margin: 8px 0;
 }
 
-.footer .column ul li {
-    margin: 20px 0;
-}
-
-.footer .column ul li a {
-    font-family: 'ali', sans-serif;
-    color: #000000;
+.footer .column p a {
+    color: #2b1055;
     text-decoration: none;
-    display: block;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.footer .column ul li a:hover {
-    color: #ffffff;
+.footer .column p a:hover {
+    color: #4c2b89;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    .footer .column {
+        flex: 100%;
+        padding: 10px;
+    }
 }
