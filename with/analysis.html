@@ -35,13 +35,123 @@
             }
         }
 
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 20px;
+            backdrop-filter: blur(5px);
+            background-color: transparent;
+            z-index: 100;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 5px;
+                backdrop-filter: blur(5px);
+                background-color: transparent;
+                z-index: 100;
+            }
+
+            .navbar a {
+                padding-left: 5px;
+                font-size: 12px;
+            }
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 100px);
+            padding: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .navbar .logo {
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.8em;
+            text-transform: capitalize;
+            letter-spacing: 2px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .navbar .logo {
+                color: #fff;
+                font-weight: 700;
+                text-decoration: none;
+                font-size: 16px;
+                text-transform: capitalize;
+                letter-spacing: 2px;
+            }
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar ul li {
+            list-style: none;
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            padding: 6px 20px;
+            color: #fff;
+            border-radius: 20px;
+            transition: background 0.3s;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .navbar ul li a {
+                text-decoration: none;
+                padding: 5px 10px;
+                color: #fff;
+                border-radius: 20px;
+                transition: background 0.3s;
+            }
+
+            .navbar ul li {
+                list-style: none;
+                margin-left: 3px;
+            }
+        }
+
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
+            background: #fff;
+            color: #2b1055;
+        }
+
         .container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             flex-direction: column;
             text-align: center;
+            padding: 80px 20px 20px 20px; /* Added padding-top to account for navbar */
         }
 
         .card {
@@ -52,6 +162,7 @@
             width: 100%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
+            margin: 20px 0;
         }
 
         .card:hover {
@@ -63,10 +174,14 @@
             font-weight: 700;
             color: #fff;
             background-color: transparent;
+            border: none;
+            padding: 0;
         }
 
         .card-body {
             margin-top: 20px;
+            padding: 0;
+            height: auto;
         }
 
         .form-group {
@@ -174,64 +289,74 @@
 
 <body>
 
-    <div class="container">
-        <div class="card">
-            <header class="card-header">
-                微解析
-                <p class="small text-muted">输入视频地址，快速播放</p>
-            </header>
-            <section class="card-body">
-                <form id="videoForm">
-                    <div class="form-group">
-                        <label for="url">视频地址</label>
-                        <input type="url" class="form-control" id="url" name="url" aria-label="视频URL"
-                            placeholder="请输入视频地址" required>
-                        <small class="form-text text-muted">例如：http://example.com/video.mp4</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="apiSelect">选择接口</label>
-                        <select class="form-control" id="apiSelect">
-                            <option value="https://jx.m3u8.tv/jiexi/?url=">API 1</option>
-                            <option value="https://www.yemu.xyz/?url=">API 2</option>
-                            <option value="https://jx.xmflv.com/?url=">API 3</option>
-                            <option value="https://dm.xmflv.com:4433/?url=">API 4</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">开始解析</button>
-                </form>
-            </section>
-        </div>
-        <div class="footer">
-            <small>所有接口均来自互联网，本网站不存储任何资源。</small><br>
-            <small>请注意视频广告，点击跳转网站请自行判断。</small><br>
-            <small>© 2025 微解析. All Rights Reserved.</small>
-        </div>
+    <div class="navbar">
+        <a href="#" class="logo">微领袖影视</a>
+        <ul>
+            <li><a href="./index.html">首页</a></li>
+            <li><a href="./index2.html">电视剧</a></li>
+            <li><a href="/VLX/index.html">周周公益</a></li>
+            <li><a class="active">微解析</a></li>
+            <li><a href="./about.html">关于</a></li>
+        </ul>
     </div>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h1>微解析</h1>
+                    <p class="small text-muted">输入视频地址，快速播放</p>
+                </div>
+                <section class="card-body">
+                    <form id="videoForm">
+                        <div class="form-group">
+                            <label for="url">视频地址</label>
+                            <input type="url" class="form-control" id="url" name="url" aria-label="视频URL"
+                                placeholder="请输入视频地址" required>
+                            <small class="form-text text-muted">例如：http://example.com/video.mp4</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="apiSelect">选择接口</label>
+                            <select class="form-control" id="apiSelect">
+                                <option value="https://jx.m3u8.tv/jiexi/?url=">API 1</option>
+                                <option value="https://www.yemu.xyz/?url=">API 2</option>
+                                <option value="https://jx.xmflv.com/?url=">API 3</option>
+                                <option value="https://dm.xmflv.com:4433/?url=">API 4</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">开始解析</button>
+                    </form>
+                </section>
+            </div>
+            <div class="footer">
+                <small>所有接口均来自互联网，本网站不存储任何资源。</small><br>
+                <small>请注意视频广告，点击跳转网站请自行判断。</small><br>
+                <small>© 2025 微解析. All Rights Reserved.</small>
+            </div>
+        </div>
 
-    <script>
-        function isValidURL(string) {
-            let url;
-            try {
-                url = new URL(string);
-            } catch (_) {
-                return false;
+        <script>
+            function isValidURL(string) {
+                let url;
+                try {
+                    url = new URL(string);
+                } catch (_) {
+                    return false;
+                }
+                return url.protocol === "http:" || url.protocol === "https:";
             }
-            return url.protocol === "http:" || url.protocol === "https:";
-        }
 
-        document.getElementById("videoForm").addEventListener("submit", function (event) {
-            event.preventDefault();
-            const api = document.getElementById("apiSelect").value;
-            const url = document.getElementById("url").value;
+            document.getElementById("videoForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+                const api = document.getElementById("apiSelect").value;
+                const url = document.getElementById("url").value;
 
-            if (!isValidURL(url)) {
-                alert('请输入有效的视频地址！');
-                return;
-            }
+                if (!isValidURL(url)) {
+                    alert('请输入有效的视频地址！');
+                    return;
+                }
 
-            window.open(api + url, '_blank');
-        });
-    </script>
+                window.open(api + url, '_blank');
+            });
+        </script>
 
 </body>
 
