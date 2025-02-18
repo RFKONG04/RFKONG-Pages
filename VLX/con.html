@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name='description' content='微领袖周周公益，往期精彩目录。'>
+    <link rel="icon" href="./logo.png" type="image/x-icon">
+    <title>周周公益·往期精彩</title>
+    <style>
+        :root {
+            --primary-color: #000000;
+            --hover-color: #ff9999;
+            --bg-opacity: 0.2;
+        }
+
+        @font-face {
+            font-family: 'tb';
+            src: url('/assets/fonts/TaoBao.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'ali';
+            src: url('/assets/fonts/Alimama.woff2') format('woff2');
+            font-weight: 300;
+        }
+
+        body {
+            font-family: 'ali', "Arial", sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(45deg,
+                    rgba(255, 154, 158, 0.8),
+                    rgba(250, 208, 196, 0.8),
+                    rgba(161, 196, 253, 0.8),
+                    rgba(194, 233, 251, 0.8),
+                    rgba(255, 204, 153, 0.8),
+                    rgba(255, 230, 189, 0.8));
+            background-size: 400% 400%;
+            animation: flowAnimation 12s ease infinite;
+            display: grid;
+            place-items: center;
+        }
+
+        @keyframes flowAnimation {
+            0% {
+                background-position: 0% 50%, 100% 50%, 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%, 0% 50%, 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%, 100% 50%, 0% 50%;
+            }
+        }
+
+        .container {
+            padding: 2rem;
+            max-width: 1200px;
+            width: 90%;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s ease forwards;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'tb', sans-serif;
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            text-align: center;
+            letter-spacing: 0.5rem;
+        }
+
+        .info-text {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin: 0.5rem 0;
+            text-align: center;
+        }
+
+        .movie-info {
+            margin: 2rem auto;
+            max-width: 1000px;
+        }
+
+        .year-section {
+            margin: 1.5rem 0;
+        }
+
+        .year-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 35px;
+        }
+
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 1rem auto;
+            justify-content: center;
+            max-width: 900px;
+        }
+
+        .movie-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            width: 100%;
+            margin: 0 auto;
+            max-width: 200px;
+        }
+
+        .movie-link:hover {
+            transform: translateY(-10px);
+        }
+
+        .poster {
+            width: 100%;
+            height: 280px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .movie-title {
+            margin-top: 1rem;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        footer a {
+            color: #0052b1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .movie-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1.5rem;
+                max-width: 600px;
+            }
+
+            .poster {
+                height: 220px;
+            }
+
+            .movie-link {
+                max-width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .info-text {
+                font-size: 1rem;
+            }
+        }
+        small {
+            font-family: 'ali', sans-serif;
+            margin-bottom:1.2em;;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>目录</h1>
+        <small>content</small>
+        <p class="info-text">往期专题，精彩呈现</p>
+
+        <div class="movie-info">
+            <div class="year-section">
+                <h2 class="year-title">2025年</h2>
+                <div class="movie-grid">
+                    <a href="" class="movie-link">
+                        <img src="https://www.vfy.us.kg/files/67b49741a5a1a/hdx.webp" alt="第1期" class="poster">
+                        <span class="movie-title">第1期</span>
+                    </a>
+                    <a href="" class="movie-link">
+                        <img src="https://www.vfy.us.kg/files/67b49757650c3/2pxhn.webp" alt="第2期" class="poster">
+                        <span class="movie-title">第2期</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h2 class="year-title">2024年</h2>
+                <div class="movie-grid">
+                    <a href="" class="movie-link">
+                        <img src="https://www.vfy.us.kg/files/67b4937d83040/bs1.webp" alt="第1期" class="poster">
+                        <span class="movie-title">第1期</span>
+                    </a>
+                    <a href="" class="movie-link">
+                        <img src="https://www.vfy.us.kg/files/67b4948355d98/robot.webp" alt="第2期" class="poster">
+                        <span class="movie-title">第2期</span>
+                    </a>
+                    <a href="" class="movie-link">
+                        <img src="https://www.vfy.us.kg/files/67b494997ba06/heidi.webp" alt="第3期" class="poster">
+                        <span class="movie-title">第3期</span>
+                    </a>
+                    <a href="" class="movie-link">
+                        <img src="https://www.vfy.us.kg/files/67b495470ea6f/duy.webp" alt="第4期" class="poster">
+                        <span class="movie-title">第4期</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <footer>&copy; 2025 <a href="../index.html" target="_blank">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
+    </div>
+</body>
+
+</html>
