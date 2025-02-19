@@ -40,6 +40,12 @@
             animation: flowAnimation 12s ease infinite;
             display: grid;
             place-items: center;
+            overflow: auto;
+        }
+
+        ::-webkit-scrollbar {
+            width: 0;
+            height: 0;
         }
 
         @keyframes flowAnimation {
@@ -217,9 +223,11 @@
                 max-width: 100px;
             }
         }
+
         small {
             font-family: 'ali', sans-serif;
-            margin-bottom:1.2em;;
+            margin-bottom: 1.2em;
+            ;
             text-align: center;
         }
     </style>
