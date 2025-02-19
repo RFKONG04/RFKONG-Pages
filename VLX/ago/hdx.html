@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>好东西</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            overflow-y: scroll;
+            /* 允许垂直滚动 */
+            overflow-x: hidden;
+            /* 隐藏水平滚动 */
+        }
+
+        /* 隐藏滚动条 */
+        ::-webkit-scrollbar {
+            display: none;
+            /* Safari 和 Chrome */
+        }
+
+        /* Firefox */
+        html {
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .video-container {
+            position: relative;
+            max-width: 80%;
+            margin-top: 50px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .video-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            border-radius: 15px;
+            filter: blur(5px);
+        }
+
+        .video-title {
+            color: white;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 45px;
+        }
+
+        .movie-info {
+            color: #888;
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .movie-info p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .movie-info strong {
+            color: #aaa;
+            margin-right: 10px;
+        }
+
+        /* Responsive text sizes */
+        @media screen and (min-width: 1024px) {
+            .movie-info p {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 1023px) {
+            .movie-info p {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .movie-info p {
+                font-size: 12px;
+            }
+
+            .movie-info {
+                padding: 15px;
+            }
+        }
+
+        .footer-description {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: rgba(255, 255, 255, 0.509);
+            padding: 10px;
+            text-align: center;
+            margin-top: 50px;
+            /* Add spacing from content above */
+        }
+
+        /* .description-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        } */
+
+        .description-content {
+            font-size: 12px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="video-title">好东西</h1>
+    <div class="video-container">
+        <div class="video-cover" onclick="playVideo()"
+            style="background: url('your-cover-image.jpg') no-repeat center center; background-size: cover;"></div>
+        <video id="myVideo" src="https://lz.qaiu.top/d/ce/pan.huang1111.cn_s_1Qk5BUv" controls
+            poster="https://g.cloudimg.cc/2025/01/25/ywirz1.webp"></video>
+    </div>
+    <div class="movie-info">
+        <p><strong>导演：</strong>邵艺辉</p>
+        <p><strong>编剧：</strong>邵艺辉</p>
+        <p><strong>主演：</strong>宋佳 / 钟楚曦 / 曾慕梅 / 章宇 / 赵又廷</p>
+        <p><strong>类型：</strong>剧情 / 爱情</p>
+        <p><strong>制片国家/地区：</strong>中国大陆</p>
+        <p><strong>语言：</strong>汉语普通话</p>
+        <p><strong>上映日期：</strong>2024-11-22(中国大陆) / 2024-11-13(金鸡国产电影展) / 2024-11-16(大规模点映)</p>
+        <p><strong>片长：</strong>123分钟</p>
+        <p><strong>又名：</strong>爱情神话平行篇：好东西 / 爱情神话·平行篇 / 爱情神话2 / Herstory / Her Story</p>
+        <p><strong>IMDb：</strong>tt31807233</p>
+        <p><strong>剧情简介：</strong></p>
+        <p style="text-indent: 2em;">爱逞强的单亲妈妈王铁梅（宋佳 饰）带小孩王茉莉（曾慕梅 饰）搬到新家，结识了所谓清醒恋爱脑的邻居小叶（钟楚曦
+            饰）。两位性格迥异的女性，一个坚强，一个柔软，一个擅长给人当妈，一个擅长随时撒谎。面对旧创伤和新挑战，她们彼此温暖互相慰藉。</p>
+        <p style="text-indent: 2em;">而围绕王铁梅的两个男人，前夫（赵又廷 饰）不时"添乱"，女儿的鼓手老师（章宇
+            饰）似乎充满新的可能。作为已经觉醒的女人们和学习过性别议题的男人们，会遇到什么新问题？会如何看待自己和世界？</p>
+    </div>
+
+    <div class="footer-description">
+        <div class="description-content">
+            微领袖影视·周周公益《好东西》<br>
+            本站仅提供web页面服务，所有资源来自互联网<br>
+            不存储、不录制、不上传
+        </div>
+    </div>
+
+    <script>
+        function playVideo() {
+            const videoElement = document.getElementById('myVideo');
+            const coverElement = document.querySelector('.video-cover');
+            coverElement.style.display = 'none';
+            videoElement.play();
+        }
+    </script>
+</body>
+
+</html>
