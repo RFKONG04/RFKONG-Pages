@@ -1,0 +1,589 @@
+@font-face {
+  font-family: 'Toroka Wide';
+  src: url('https://flow.movie/fonts/Toroka-WideLight.woff2') format('woff2'),
+    url('https://flow.moviefonts/Toroka-WideLight.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Toroka Wide';
+  src: url('https://flow.movie/fonts/Toroka-WideRegular.woff2') format('woff2'),
+    url('https://flow.movie/fonts/Toroka-WideRegular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  -ms-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Toroka Wide;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-font-smoothing: antialiased;
+  font-smooth: antialised;
+  overflow-y: scroll;
+  /* 允许垂直滚动 */
+  overflow-x: hidden;
+  /* 隐藏水平滚动 */
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  display: none;
+  /* Safari 和 Chrome */
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body {
+  background: black;
+}
+
+.lightfont,
+.billingblock span {
+  font-weight: 200;
+}
+
+.logo {
+  position: absolute;
+  width: 20%;
+  top: 3vh;
+  left: 0;
+  transform: translate(calc(50vw - 50%));
+  z-index: 100;
+  /* animation: logoscale 20s ease-in-out infinite; */
+}
+
+.logo img {
+  width: 100%;
+}
+
+/* 
+@keyframes logoscale {
+  0% {
+    transform: translate(calc(50vw - 50%)) scale(1);
+  }
+  50% {
+    transform: translate(calc(50vw - 50%)) scale(1.05);
+  }
+  100% {
+    transform: translate(calc(50vw - 50%)) scale(1);
+  }
+} */
+
+.laurels {
+  position: absolute;
+  padding-top: 7vh;
+  padding-left: 4vh;
+  padding-right: 4vh;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.laurels .left,
+.laurels .right {
+  display: flex;
+  gap: 2vw;
+  /* max-width: 700px; */
+}
+
+.laurels img {
+  filter: invert(1);
+  height: 7vh;
+}
+
+#top-anim {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  /* overflow:hidden; */
+  z-index: -1;
+}
+
+#top-anim img {
+  width: 100vw;
+  position: absolute;
+}
+
+.sky {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.city {
+  /* bottom: -50vh; */
+  left: 0px;
+  /* transition: bottom 0.2s ease-in-out; */
+
+}
+
+.cat {
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  animation: moveUpAndDown 5s ease-in-out infinite;
+  bottom: -55vh;
+  /* transition: bottom 0.2s ease-in-out; */
+}
+
+/* Keyframes for animation */
+@keyframes moveUpAndDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(1vw);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.citynormal {
+  animation: cityfade 30s ease-in-out infinite;
+}
+
+@keyframes cityfade {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.gradient-overlay {
+  position: absolute;
+  /* Position overlay absolutely */
+  top: 0;
+  /* Cover entire container */
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 20%));
+  /* Gradient from transparent to black */
+  pointer-events: none;
+  /* Allow interactions to pass through */
+  mix-blend-mode: multiply;
+  /* Apply multiply blend mode */
+}
+
+.director {
+  position: absolute;
+  color: white;
+  width: 100%;
+  text-align: center;
+  bottom: 3vh;
+  font-size: 1.5em;
+  z-index: 1;
+}
+
+.directormobile {
+  bottom: auto;
+  margin-top: 4vh;
+  position: absolute;
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  z-index: 1;
+}
+
+.billingblock {
+  max-width: 1800px;
+  margin: 0 auto;
+  pointer-events: none;
+}
+
+a.ticketsbutton {
+  color: white;
+  text-decoration: none;
+  margin-top: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 300px;
+}
+
+div.ticketsbutton {
+  text-align: center;
+  padding: 25px 0;
+  background: white;
+  color: black;
+  display: block;
+  position: relative;
+  -webkit-transition: background 200ms ease;
+  transition: background 200ms ease;
+  overflow: hidden;
+  /* Ensure child elements don't overflow */
+  mix-blend-mode: screen;
+}
+
+/* Styling for the cut corners */
+div.ticketsbutton:before,
+div.ticketsbutton:after {
+  content: "";
+  width: 20px;
+  /* Adjust width for corner size */
+  height: 20px;
+  /* Adjust height for corner size */
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+div.ticketsbutton:before {
+  left: -10px;
+  /* Position left corner */
+  border-right: none;
+  /* Hide the border on the side facing the ticket */
+}
+
+div.ticketsbutton:after {
+  right: -10px;
+  /* Position right corner */
+  border-left: none;
+  /* Hide the border on the side facing the ticket */
+}
+
+div.ticketsbutton:hover {
+  background-color: #ccc;
+}
+
+.ticketsbutton span {
+  display: block;
+  font-size: 0.7em;
+  margin-top: 0.1em;
+}
+
+
+
+.trailer {
+  margin: 5px auto;
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.trailer .thumbnail {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Style for play button */
+.play-button {
+  position: absolute;
+  font-size: 64px;
+  color: rgba(255, 255, 255, 0.8);
+
+}
+
+.trailer:hover .play-button,
+.play-button:hover {
+  color: rgba(255, 255, 255, 1);
+  /* Brighten the play button */
+}
+
+.right-pointing-triangle::after {
+  content: "\25B6 \FE0E";
+}
+
+/* Popup styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  /* background: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+#synopsis {
+  max-width: 60%;
+  padding: 0 3%;
+  font-size: 1.5em;
+  color: rgb(190, 190, 190);
+  margin: 25vh auto;
+  text-align: center;
+}
+
+#synopsis small {
+  font-size: 0.9em;
+}
+
+#shop {
+  margin: 25vh auto 25vh auto;
+  max-width: 1800px;
+}
+
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.loader-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-content svg {
+  width: 50vh;
+  max-width: 30%;
+}
+
+.stills {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.stills img {
+  width: 50%;
+}
+
+.socials {
+  max-width: 1200px;
+  margin: 3vh auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.socials a {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  cursor: pointer;
+}
+
+.socials a span {
+  margin-top: 20px;
+}
+
+.socials .dog img {
+  width: 75%;
+}
+
+.socials .bird img {
+  width: 140%;
+}
+
+.socials .lemur img {
+  width: 60%;
+}
+
+.socials a:hover {
+  /* filter: drop-shadow(0px 0px 5px white); */
+  filter: brightness(1.2);
+}
+
+.wallpapers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+  padding: 0 5%;
+  margin-bottom: 5vh;
+}
+
+.wallpapers a {
+  width: 15%;
+}
+
+.wallpapers img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  pointer-events: all !important;
+}
+
+p.wallp {
+  padding: 0 2%;
+  font-size: 1.3em;
+  color: rgba(255, 255, 255, 0.642);
+  text-align: center;
+  margin: 5vh;
+}
+
+.onlymobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1600px) {
+  .laurels .left {
+    flex-direction: column;
+  }
+
+  .laurels .right {
+    flex-direction: column-reverse;
+  }
+
+  .laurels {
+    padding-top: 5vh;
+  }
+}
+
+
+@media only screen and (max-width: 900px) {
+  .onlydesktop {
+    display: none;
+  }
+
+  .onlymobile {
+    display: block;
+  }
+
+  .laurelsmob {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding: 0;
+    margin: 10vh 0;
+  }
+
+  .laurels .left,
+  .laurels .right {
+    gap: 50px;
+  }
+
+  .trailer,
+  #synopsis,
+  #shop {
+    margin: 10vh auto;
+  }
+
+  #synopsis {
+    font-size: 1em;
+    max-width: 38ch;
+  }
+
+  .stills img {
+    width: 100%;
+  }
+
+  .socials {
+    flex-direction: column;
+    flex-flow: wrap;
+    justify-content: center;
+    overflow-x: hidden;
+    margin: 10vh auto;
+  }
+
+  .socials a {
+    width: 50%;
+  }
+
+  .socials .lemur {
+    margin-top: 5vh;
+  }
+
+  .billingblock img {
+    margin: 10%;
+  }
+
+  .billingblock div {
+    color: white;
+    padding: 0 5%;
+    text-align: center;
+    font-size: 0.8em;
+  }
+
+  a.ticketsbutton {
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    width: 70%;
+  }
+
+  .wallpapers a {
+    width: 30%;
+  }
+
+  .wallpapers {
+    margin-bottom: 10vh;
+  }
+}
+
+img {
+  pointer-events: none !important;
+}
