@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>年会不能停!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background: #000000a5;
+            background-image: url('https://o.pan.vmhost.cc/files/67d1681df0055/nh.webp'), linear-gradient(135deg, #1a1a1a, #4a4a4a);
+            background-size: cover;
+            background-blend-mode: overlay;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+            scrollbar-width: none;
+        }
+
+        .video-container {
+            position: relative;
+            max-width: 80%;
+            margin-top: 50px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .video-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            border-radius: 15px;
+            filter: blur(5px);
+        }
+
+        .video-title {
+            color: white;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 45px;
+        }
+
+        .movie-info {
+            color: #888;
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .movie-info p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .movie-info strong {
+            color: #aaa;
+            margin-right: 10px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .movie-info p {
+                font-size: 16px;
+            }
+        }
+
+        @media screen and (max-width: 1023px) {
+            .movie-info p {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .movie-info p {
+                font-size: 12px;
+            }
+
+            .movie-info {
+                padding: 15px;
+            }
+        }
+
+        .footer-description {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: rgba(255, 255, 255, 0.509);
+            padding: 10px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .description-content {
+            font-size: 12px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="video-title">年会不能停!</h1>
+    <div class="video-container">
+        <div class="video-cover" onclick="playVideo()"
+            style="background: url('your-cover-image.jpg') no-repeat center center; background-size: cover;"></div>
+        <video id="myVideo" src="https://o.pan.vmhost.cc/files/67d168ee4e096/nh.mkv" controls
+            poster="https://o.pan.vmhost.cc/files/67d167c99d64f/hnh.webp"></video>
+    </div>
+    <div class="movie-info">
+        <p><strong>导演：</strong>董润年</p>
+        <p><strong>编剧：</strong>董润年 / 应萝佳</p>
+        <p><strong>主演：</strong>大鹏 / 白客 / 庄达菲 / 王迅 / 孙艺洲 / 更多...</p>
+        <p><strong>类型：</strong>剧情 / 喜剧</p>
+        <p><strong>制片国家/地区：</strong>中国大陆</p>
+        <p><strong>语言：</strong>汉语普通话</p>
+        <p><strong>上映日期：</strong>2023-12-29(中国大陆)</p>
+        <p><strong>片长：</strong>117分钟</p>
+        <p><strong>又名：</strong>Johnny Keep Walking!</p>
+        <p><strong>IMDb：</strong>tt27922369</p>
+        <p><strong>剧情简介：</strong></p>
+        <p style="text-indent: 2em;">在一个配件厂兢兢业业许多年的钳工胡建林（大鹏
+            饰），偶然接到一纸调令，命他马上到集团总公司赴任。淳朴老实的建林还以为作为年年先进的他成为了集团树立奖掖优秀员工的典型，殊不知这却是一场阴差阳错走后门拖关系的狸猫换太子。人事经理马杰（白客
+            饰）虽然很快发现了这场乌龙，但为了避免遭到处罚，只能将错就错，想方设法保住这位不速之客。而在这一过程中，胡建林也因扑朔迷离的身份受到集团上下的种种揣测，他的层级也意外地一次又一次提升。与此同时，集团正处于大裁员的风雨飘摇时刻，而展现公司面貌的年会召开在即。
+        </p>
+        <p style="text-indent: 2em;">处在漩涡中心的胡建林，终于发现了一系列诡异事件背后的玄机……</p>
+    </div>
+
+    <div class="footer-description">
+        <div class="description-content">
+            微领袖影视·周周公益《年会不能停!》<br>
+            本站仅提供web页面服务，所有资源来自互联网<br>
+            不存储、不录制、不上传
+        </div>
+    </div>
+
+    <script>
+        function playVideo() {
+            const videoElement = document.getElementById('myVideo');
+            const coverElement = document.querySelector('.video-cover');
+            coverElement.style.display = 'none';
+            videoElement.play();
+        }
+    </script>
+</body>
+
+</html>
