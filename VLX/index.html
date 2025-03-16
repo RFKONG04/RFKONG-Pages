@@ -1,220 +1,211 @@
-<!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE html>
+<html lang="zh-cn">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name='description' content='微领袖周周公益，每周更新，欢迎您的观看！'>
-    <link rel="icon" href="./logo.png" type="image/x-icon">
-    <title>微领袖·周周公益</title>
-    <style>
-        @font-face {
-            font-family: 'tb';
-            src: url('/assets/fonts/TaoBao.woff') format('woff');
-            font-style: 100px;
-        }
+   <!-- Primary Meta Tags -->
+   <meta charset="UTF-8">
+   <title>超凡如风科技 | C.F.R.F.KONG</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description"
+      content="超凡如风科技(C.F.R.F.KONG)是您值得信赖的科技合作伙伴。我们提供全方位的创新科技解决方案，包括数字化转型、云服务、人工智能应用等。通过专业技术和优质服务，助力企业实现数字化升级，打造极致用户体验。">
+   <meta name="keywords" content="超凡如风科技,C.F.R.F.KONG,科技解决方案,数字创新,RFKONG,技术服务,互联网科技,人工智能,云服务">
+   <meta name="author" content="超凡如风科技">
+   <meta name="robots" content="index, follow">
 
-        @font-face {
-            font-family: 'ali';
-            src: url('/assets/fonts/Alimama.woff2') format('woff2');
-            font-weight: 300;
-            font-style: normal;
-        }
+   <!-- Open Graph / Facebook -->
+   <meta property="og:type" content="website">
+   <meta property="og:url" content="https://www.rfkong.top/">
+   <meta property="og:title" content="超凡如风科技 | 引领创新，驱动未来">
+   <meta property="og:description"
+      content="超凡如风科技致力于提供前沿的科技解决方案，通过创新技术助力企业数字化转型，打造智能化未来。我们的服务包括云计算、人工智能应用开发、数据分析等多个领域。">
+   <meta property="og:image" content="https://o.pan.vmhost.cc/files/67c66c3907558/cfrf.png">
+   <meta property="og:image:width" content="1200">
+   <meta property="og:image:height" content="630">
 
-        body {
-            font-family: 'ali', "Arial", sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #d1d1d1;
-            background:
-                linear-gradient(45deg, rgba(255, 154, 158, 0.8), rgba(250, 208, 196, 0.8), rgba(161, 196, 253, 0.8), rgba(194, 233, 251, 0.8), rgba(255, 204, 153, 0.8), rgba(255, 230, 189, 0.8));
-            background-size: 400% 400%;
-            animation: flowAnimation 12s ease infinite;
-        }
+   <!-- Twitter -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:title" content="超凡如风科技 | C.F.R.F.KONG">
+   <meta name="twitter:description" content="超凡如风科技专注于创新科技解决方案，提供云服务、AI应用、数据分析等服务，助力企业数字化转型，开创智能化未来。">
+   <meta name="twitter:image" content="https://g.cloudimg.cc/2025/01/10/m1n4ys.webp">
 
+   <!-- Verification -->
+   <meta name="msvalidate.01" content="CC8DB647AEDFE98042ED4F90BFE5375D">
 
-        @keyframes flowAnimation {
-            0% {
-                background-position: 0% 50%, 100% 50%, 0% 50%;
-            }
+   <!-- Favicon -->
+   <link rel="icon" href="./assets/img/favicon.ico" type="image/x-icon">
+   <link rel="canonical" href="https://www.rfkong.top/">
 
-            50% {
-                background-position: 100% 50%, 0% 50%, 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%, 100% 50%, 0% 50%;
-            }
-        }
-
-        .container {
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            display: none;
-        }
-
-        @media (max-width: 700px) {
-            .container {
-                text-align: center;
-                background-color: rgba(255, 255, 255, 0.2);
-                backdrop-filter: blur(10px);
-                padding: 30px;
-                border-radius: 25px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                max-width: 320px;
-                display: none;
-            }
-        }
-
-        h1 {
-            font-family: 'tb', sans-serif;
-            font-size: 30px;
-            margin-bottom: 20px;
-            color: #000;
-            /* 文字颜色 */
-        }
-
-        p {
-            font-family: 'ali', sans-serif;
-            font-size: 18px;
-            line-height: 1;
-            margin-bottom: 20px;
-            color: #000;
-            /* 文字颜色 */
-        }
-
-        .alert {
-            color: rgb(0, 0, 0);
-            background-color: rgba(255, 255, 255, 0.8);
-            /* 半透明背景色 */
-            padding: 25px;
-            border-radius: 15px;
-            line-height: 1.8;
-            font-size: 20px;
-            font-weight: bold;
-            display: none;
-            /* 默认隐藏，按需显示 */
-        }
-
-        #countdown-text {
-            font-size: 20px;
-            color: #333;
-        }
-
-        footer {
-            font-size: 14px;
-            margin-top: 20px;
-            color: #000000;
-        }
-
-        footer a {
-            font-weight: bold;
-            color: #0052b1c3;
-            text-decoration: none;
-        }
-
-        .movie-info {
-            text-align: center;
-            text-decoration: none;
-            margin-top: 0.5em;
-        }
-
-        .movie-info a {
-            color: #0052b1c3;
-            text-align: center;
-            text-decoration: none;
-        }
-
-        .movie-link {
-            display: inline-block;
-            margin: 3px;
-            padding: 8px;
-            background-color: #000000;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .movie-link:hover {
-            background-color: #ff9999;
-        }
-    </style>
+   <!-- Stylesheets -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+   <link rel="stylesheet" href="assets/css/sakura.min.css">
+   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <div id="alert" class="alert"></div>
+   <header class="header" id="header">
+      <div class="nav container">
+         <a href="#" class="nav__logo">
+            <i class="ri-ancient-gate-line"></i>
+            <span>超凡如风科技</span>
+         </a>
 
-    <div id="content" class="container">
-        <h1>微领袖·周周公益</h1>
-        <p>欢迎您 &nbsp;&bull;&nbsp;来到 &nbsp;&bull;&nbsp;微领袖影视</p>
-        <p>此项目为微领袖影视公益项目</p>
-        <p>我们仅会保留此专题1周时间供您欣赏</p>
-        <p>一周之后,将上新新的专题</p>
-        <p id="countdown-text"><span id="countdown">16</span> 秒后进入</p>
-        <footer>&copy; 2025 <a href="../index.html" target="_blank">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
-        <div class="movie-info">
-            <small><a href="./con.html">往期专题</a></small>
-        </div>
-    </div>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li>
+                  <a href="https://me.rfkong.top" class="nav__link">R.F.KONG</a>
+               </li>
 
-    <script>
-        var count = 16;
-        var intervalId;
+               <li>
+                  <a href="./with" class="nav__link">微领袖影视</a>
+               </li>
 
-        function startCountdown() {
-            intervalId = setInterval(function () {
-                count--;
-                document.getElementById("countdown").innerHTML = count;
-                if (count <= 0) {
-                    clearInterval(intervalId);
-                    window.location.href = "snk3.html"; // 自动跳转页面
-                }
-            }, 1000);
-        }
+               <li>
+                  <a href="./VLX" class="nav__link">周周公益</a>
+               </li>
 
-        function stopCountdown() {
-            clearInterval(intervalId); // 停止倒计时
-        }
+               <li>
+                  <a href="https://vps.rfkong.top" class="nav__link">云盘</a>
+               </li>
 
-        function isChromeBrowser() {
-            return /Chrome/i.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        }
+               <li>
+                  <a href="./assets/520.html" class="nav__link">爱绘</a>
+               </li>
 
-        function isWeChatBrowser() {
-            return /MicroMessenger/i.test(navigator.userAgent);
-        }
+               <li>
+                  <a href="https://scs.data.blog" class="nav__link">S.C.S</a>
+               </li>
 
-        function isEdgeBrowser() {
-            return /Edg\//i.test(navigator.userAgent); // 检测 Edge 浏览器
-        }
+               <li>
+                  <a href="https://rfai.top" class="nav__link">RFAI</a>
+               </li>
 
-        // if (isEdgeBrowser()) {
-        //     document.getElementById('alert').style.display = 'block'; // Edge 浏览器提示
-        //     document.getElementById('alert').innerHTML = '目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！';
-        // } else 
-        if (isWeChatBrowser()) {
-            document.getElementById('alert').style.display = 'block'; // 微信浏览器提示
-            document.getElementById('alert').innerHTML = '目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！';
-        } else if (isChromeBrowser()) {
-            document.getElementById('content').style.display = 'block'; // Chrome 浏览器可以访问
-            startCountdown(); // 开启倒计时
-        }
-        // else {
-        //     document.getElementById('alert').style.display = 'block'; // 其他浏览器提示（如需）
-        //     document.getElementById('alert').innerHTML = '该浏览器暂不支持访问<br>请使用 Chrome 浏览器！';
-        // }
-    </script>
+               <li>
+                  <a href="./assets/about.html" class="nav__link">关于</a>
+               </li>
+            </ul>
 
+            <!-- Close button-->
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-large-line"></i>
+            </div>
+         </div>
+
+         <!-- Toggle button -->
+         <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-apps-2-line"></i>
+         </div>
+      </div>
+   </header>
+
+   <main class="main">
+      <section class="home">
+         <img src="assets/img/img-bg.svg" alt="背景图片" class="home__bg">
+
+         <div class="home__container container">
+            <div class="home__data">
+               <h1 class="home__title">Welcome To<br>C.F.R.F.KONG</h1>
+               <h3 class="home__title">创新科技，<br>引领未来！
+               </h3>
+            </div>
+
+            <div class="home__images">
+               <img src="assets/img/img-1.svg" alt="图片1" class="home__img-1">
+               <img src="assets/img/img-2.svg" alt="图片2" class="home__img-2">
+               <img src="assets/img/img-3.svg" alt="图片3" class="home__img-3">
+               <img src="assets/img/img-4.svg" alt="图片4" class="home__img-4">
+               <img src="assets/img/img-5.svg" alt="图片5" class="home__img-5">
+               <img src="assets/img/img-6.svg" alt="图片6" class="home__img-6">
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <footer class="footer">
+      <div class="container">
+         <div class="footer__content">
+            <div class="footer__info">
+               <p class="footer__copyright">&copy; 2025 超凡如风科技 All rights reserved.</p>
+               <p class="footer__slogan">一战到底，永不言弃！</p>
+            </div>
+            <div class="footer__right"></div>
+            <div class="footer__links">
+               <a href="./assets/about.html">关于我们</a>
+               <a href="javascript:void(0)" onclick="openDialog()">联系与隐私</a>
+               <dialog id="termsDialog" class="terms-dialog">
+                  <h3>服务条款与联系方式</h3>
+                  <div class="dialog-content">
+                     <h4>服务条款</h4>
+                     <p>本网站由超凡如风科技提供服务。使用本网站即表示您完全接受并同意遵守所有相关条款和条件。我们保留随时修改服务条款的权利。</p>
+                     <h4>免责声明</h4>
+                     <p>本网站内容仅供参考，不构成任何形式的承诺。对于使用本网站所产生的任何直接或间接损失，超凡如风科技不承担任何责任。</p>
+                     <h4>隐私政策</h4>
+                     <p>我们严格保护您的个人信息安全，确保您访问本网站及相关链接的安全性。您的信息仅用于改善服务质量，绝不会用于其他用途。</p>
+                     <h4>联系方式</h4>
+                     <!-- <p>邮箱：Hi@rfkong.top</p> -->
+                     <p>QQ交流群：1018413847</p>
+                  </div>
+                  <button onclick="closeDialog()">关闭</button>
+               </dialog>
+               <style>
+                  .terms-dialog {
+                     padding: 20px;
+                     border-radius: 8px;
+                     border: none;
+                     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+                     width: 80%;
+                     max-width: 500px;
+                     position: fixed;
+                     top: 50%;
+                     left: 50%;
+                     transform: translate(-50%, -50%);
+                     background: #fff;
+                  }
+
+                  .terms-dialog::backdrop {
+                     background: rgba(0, 0, 0, 0.6);
+                  }
+
+                  .dialog-content {
+                     margin: 15px 0;
+                     line-height: 1.5;
+                  }
+
+                  .terms-dialog button {
+                     padding: 8px 16px;
+                     border: none;
+                     border-radius: 4px;
+                     background: var(--first-color, #4D61E3);
+                     color: white;
+                     cursor: pointer;
+                     transition: 0.3s;
+                  }
+
+                  .terms-dialog button:hover {
+                     background: var(--first-color-alt, #3d4ec7);
+                  }
+               </style>
+               <script>
+                  function openDialog() {
+                     document.getElementById('termsDialog').showModal();
+                  }
+                  function closeDialog() {
+                     document.getElementById('termsDialog').close();
+                  }
+               </script>
+            </div>
+            <div class="footer__social">
+               <a href="https://github.com/RFKONG" target="_blank"><i class="ri-github-fill"></i></a>
+               <a href="https://twitter.com/R_F_KONG" target="_blank"><i class="ri-twitter-fill"></i></a>
+               <a href="mailto:rf.kong@outlook.com"><i class="ri-mail-fill"></i></a>
+            </div>
+         </div>
+      </div>
+      </div>
+   </footer>
+   <div class="sakura-petals"></div>
+   <script src="assets/js/gsap.min.js"></script>
+   <script src="assets/js/sakura.min.js"></script>
+   <script src="assets/js/main.js"></script>
 </body>
 
 </html>
