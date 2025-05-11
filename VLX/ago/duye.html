@@ -4,16 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://rfkong.top/vlx/logo.png" type="image/x-icon">
     <title>毒液3: 最后一舞</title>
     <style>
-        @font-face {
-            font-family: 'tb';
-            src: url('/assets/fonts/TaoBao.woff') format('woff');
-            font-style: 100px;
-        }
+        @import url("https://fontsapi.zeoseven.com/190/main/result.css");
 
         body {
-            font-family: 'tb', "Arial", sans-serif;
+            font-family: "极影毁片圆 Medium", "Arial", sans-serif;
             margin: 0;
             padding: 0;
             color: white;
@@ -21,24 +18,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background:
-                linear-gradient(45deg, rgba(119, 0, 4, 0.8), rgba(109, 24, 0, 0.8), rgba(0, 48, 126, 0.8), rgba(0, 81, 119, 0.8), rgba(99, 49, 0, 0.8), rgba(46, 29, 0, 0.8));
-            background-size: 400% 400%;
-            animation: flowAnimation 20s ease infinite;
-        }
-
-        @keyframes flowAnimation {
-            0% {
-                background-position: 0% 50%, 100% 50%, 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%, 0% 50%, 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%, 100% 50%, 0% 50%;
-            }
+            background: #1a1a1a;
         }
 
         .container {
@@ -53,23 +33,24 @@
         }
 
         h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
+            font-size: 2.5em;
+            margin-bottom: 15px;
         }
 
         p {
-            font-size: 1.2em;
-            margin-bottom: 40px;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
 
         .video-container {
             position: relative;
-            width: 100%;
-            max-width: 800px;
+            width: 90%;
+            max-width: 1000px;
             margin: auto;
             overflow: hidden;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         video {
@@ -84,7 +65,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -101,28 +82,26 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 10px 20px;
-            background-color: #fff;
+            padding: 8px 16px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
             border: none;
             cursor: pointer;
-            border-radius: 25px;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
         }
 
-        h1 {
-            color: white;
-            text-align: center;
-            font-weight: 500;
-            font-size: bold;
-            padding: 20px;
-            margin-bottom: 20px;
+        #playButton:hover {
+            background-color: rgba(255, 255, 255, 1);
         }
 
         .footer {
-            font-size: 15px;
-            margin-top: 50px;
-            line-height: 1.8;
+            font-size: 12px;
+            margin-top: 30px;
+            line-height: 1.6;
             position: relative;
-            color: white;
+            color: #999;
             text-align: center;
         }
 
@@ -131,19 +110,19 @@
         }
 
         .jump-button {
-            margin-top: 30px;
+            margin-top: 20px;
             display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 8px 16px;
+            font-size: 14px;
             color: #fff;
-            background-color: #000000;
+            background-color: #333;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 20px;
             transition: background-color 0.3s ease;
         }
 
         .jump-button:hover {
-            background-color: #0056b3;
+            background-color: #555;
         }
     </style>
 </head>
@@ -154,7 +133,7 @@
         <p>探索埃迪&middot;布洛克与毒液之间复杂的关系，在他们共同面对前所未有的威胁时，两者的命运将何去何从？</p>
         <div class="video-container">
             <video id="myVideo" controls>
-                <source src="http://wanyue-cloud.xbjstd.cn:5212/f/nwjH4/dy3.mkv" type="video/mp4">
+                <source src="http://wanyue-cloud.xbjstd.cn:5212/f/LdXiG/dy3.mp4" type="video/mp4">
                 您的浏览器不支持HTML5视频标签。
             </video>
             <div id="videoCover" class="video-cover">
@@ -163,17 +142,13 @@
             </div>
         </div>
         <div class="button-container">
-            <a href="http://wanyue-cloud.xbjstd.cn:5212/f/O12cY/inf.html" class="jump-button">打开视频</a>
-            <a href="http://wanyue-cloud.xbjstd.cn:5212/f/nwjH4/dy3.mkv" class="jump-button">下载</a>
+            <small style="color: #c5c5c5;">如果不显示▶请</small>
+            <a href="http://wanyue-cloud.xbjstd.cn:5212/f/LdXiG/dy3.mp4" class="jump-button">打开视频</a>
         </div>
         <div class="footer">
-            <small>微领袖影视·周周公益 第5周</small>
-            <small>支持4K杜比全景声</small><br>
-            <small>大小:10GB,注意流量消耗</small>
-            <small>卡顿请换网/缓存/下载</small><br>
-            <small>资源不可商用,仅供欣赏</small>
-            <small>仅供学习英语交流</small><br>
-            <small>如果无法播放请点击“打开视频”</small>
+            <small>微领袖影视·周周公益 第5周<br>
+                如果无法播放请点击“打开视频”
+            </small>
         </div>
     </div>
     <script>

@@ -4,21 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://rfkong.top/vlx/logo.png" type="image/x-icon">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
     <meta name="viewport"
         content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <title>微领袖影视-Heidi</title>
+    <title>Heidi</title>
     <style>
+        @import url("https://fontsapi.zeoseven.com/190/main/result.css");
+
         @font-face {
             font-family: 'tb';
             src: url("/assets/fonts/Alimama.woff2") format('woff2');
             font-style: normal;
         }
 
-
         * {
-            font-family: 'tb', sans-serif !important;
+            font-family: "极影毁片圆 Medium", 'tb', sans-serif !important;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -32,7 +34,6 @@
             padding: 0;
             height: 100vh;
             background: linear-gradient(to bottom, #87CEEB, #4682B4) no-repeat;
-            /*sky*/
             background-size: 100% 100%;
         }
 
@@ -78,7 +79,6 @@
             z-index: 3;
         }
 
-        /* 雪花动画效果 */
         @keyframes snowfall {
             0% {
                 transform: translateY(-100px) rotate(0deg);
@@ -91,7 +91,6 @@
             }
         }
 
-        /* 雪花样式 */
         .snowflake {
             position: absolute;
             top: -10px;
@@ -101,7 +100,6 @@
             animation: snowfall linear infinite;
         }
 
-        /* 动态生成雪花并赋予不同属性 */
         .snowflake:nth-child(odd) {
             animation-duration: 8s;
             animation-timing-function: ease-in;
@@ -124,10 +122,8 @@
         .right {
             font-family: tb, sans-serif;
             flex: 1;
-            /* 均分宽度 */
             padding: 20px;
             overflow-y: auto;
-            /* 可滚动 */
         }
 
         .left {
@@ -159,22 +155,18 @@
             color: white;
             text-align: center;
             font-weight: 500;
-            font-size: tb;
             font-size: 55px;
             padding: 20px;
             margin-bottom: 20px;
-
         }
 
         .header p {
             color: white;
             text-align: center;
             font-weight: 500;
-            font-size: tb;
             font-size: 32px;
             padding: 10px;
             margin: 10px;
-
         }
 
         .title {
@@ -220,6 +212,7 @@
             position: relative;
             width: 100%;
             max-width: 800px;
+            border-radius: 15px;
         }
 
         video {
@@ -245,10 +238,8 @@
             transform: scale(1.05);
         }
 
-        /* 不规则排列效果 */
         .photo:nth-child(odd) {
             align-self: auto;
-            /* 奇数项向上排列 */
         }
 
         .photo:nth-child(even) {
@@ -272,49 +263,31 @@
             }
         }
 
-        /*phone*/
         @media (max-width: 768px) {
             .content {
                 flex-direction: row-reverse;
             }
 
             .header h1 {
-                color: white;
-                text-align: center;
-                font-weight: 500;
-                font-size: tb;
                 font-size: 30px;
-                padding: 20px;
-                margin-bottom: 20px;
-
             }
 
             .header p {
-                color: white;
-                text-align: center;
-                font-weight: 500;
                 font-size: tb;
                 padding: 10px;
                 margin: 10px;
-
             }
         }
 
         @media (max-width:700px) {
 
             .title {
-                font-family: tb, sans-serif;
-                color: white;
-                text-align: center;
                 font-size: 2.0em;
                 padding: 10px;
                 margin: 10px;
             }
 
             .textp {
-                font-family: tb, sans-serif;
-                color: white;
-                text-align: left;
                 font-size: 1.1em;
                 padding: 10px;
                 margin: 10px;
@@ -322,7 +295,6 @@
 
             .main-content {
                 max-width: 900px;
-                color: #ffffff;
                 font-size: 0.9em;
                 margin: auto;
                 padding: 10px;
@@ -339,6 +311,37 @@
                 text-align: center;
                 z-index: 2;
             }
+        }
+
+        .textp {
+            font-family: tb, sans-serif;
+            color: white;
+            text-align: left;
+            font-size: 1.1em;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        .textp a {
+            color: #005c84;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .download-button {
+            font-size: medium;
+            display: inline-block;
+            padding: 10px;
+            background-color: #004b76;
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+
+        .video-link-container {
+            text-align: center;
+            margin: 10px;
+            height: auto;
         }
     </style>
 </head>
@@ -394,8 +397,7 @@
                     <br>编剧: 约翰娜·斯比丽 / 佩特拉·比翁迪娜·沃尔普
                     <br>主演: 阿努克·斯特芬 / 布鲁诺·冈茨 / 昆林·艾格匹 / 安娜·申茨 / 伊莎贝尔·奥特曼 / 更多...
                     <br>类型: 剧情 / 家庭 / 冒险
-                    <br>官方网站: <a style="text-decoration: none; color: #0075b0;"
-                        href="https://www.zodiacpictures.com/de/projekte/heidi">前往</a>
+                    <br>官方网站: <a href="https://www.zodiacpictures.com/de/projekte/heidi">前往</a>
                     <br>制片国家/地区: 德国 / 瑞士
                     <br>语言: 南非语 / 德语 / 瑞士德语
                     <br>上映日期: 2019-05-16(中国大陆) / 2015-12-10(德国)
@@ -417,21 +419,14 @@
                     <h2>Awards(奖项)</h2>
                     <p><small>German Film Award 2016:</small></p>
                     <p><small>Best Children's Film</small></p>
-                    <p><small>2016年德国电影奖:</small></p>
-                    <p><small>最佳儿童影片</small></p>
                     <p>&nbsp;</p>
                     <p><small>Bavarian Film Award 2016:</small></p>
                     <p><small>Best Children's Film</small></p>
-                    <p><small>2016年巴戈利亚电影奖:</small></p>
-                    <p><small>最佳儿童影片</small></p>
                     <p>&nbsp;</p>
                     <p><small>Children's Film Festival Seattle 2017:</small></p>
                     <p><small>Children's Jury Award Best Feature Film for Ages 8+</small></p>
-                    <p><small>2017年西雅图电影节</small></p>
-                    <p><small>儿童评审团奖最佳8岁以上故事片奖</small></p>
                     <p>&nbsp;</p>
                     <p><small>Central Swiss Film Award 2017</small></p>
-                    <p><small>2017年瑞士中部电影奖</small></p>
                     <p>&nbsp;</p>
                     <h2>Nominations(提名)</h2>
                     <p><small>Swiss Film Award 2016:</small></p>
@@ -451,62 +446,44 @@
                     <video width="100%" height="450"
                         poster="https://www.zodiacpictures.com/gallery/preview/169/heidi-szenen-02-heidi-anuk-steffenopt@2x.jpg"
                         controls>
-                        <source src="http://wanyue-cloud.xbjstd.cn:5212/f/b2psl/Heidi.mp4" type="video/mp4">
+                        <source src="https://lz.qaiu.top/d/ce/cloud.06dn.com_s_lJyBIx" type="video/mp4">
                         您的浏览器不支持HTML5视频标签。
                     </video>
-                    <div style="text-align: center; margin:10px;height: auto;">
-                        <a id="copyButton" href="javascript:void(0)" download="Heidi.mp4"
-                            style="display: inline-block; padding: 10px 20px; background-color: #0081cc; color: white; text-decoration: none; border-radius: 50px;margin-right: 10px;">
-                            复制超清链接
-                        </a>
-                        <div id="textToCopy" style="display: none;">
-                            https://lz.qaiu.top/ce/wanyue-cloud.xbjstd.cn:5212/f/b2psl/Heidi.mp4
-                        </div>
-                        <a href="http://wanyue-cloud.xbjstd.cn:5212/f/b2psl/Heidi.mp4" download="Heidi.mp4"
-                            style="display: inline-block; padding: 10px 20px; background-color: #0081cc; color: white; text-decoration: none; border-radius: 50px;">
-                            点击打开视频
+                    <div class="video-link-container">
+                        <small style="color: #004b76;">如果不显示▶请</small>
+                        <a href="http://wanyue-cloud.xbjstd.cn:5212/f/KamFz/Heidi.mkv" download="Heidi.mp4"
+                            class="download-button">
+                            打开/下载
                         </a>
                     </div>
                 </div>
             </div>
         </div>
         <footer class="footer">
-            支持超清,如果卡顿请切换网络环境或下载观看<br>
-            如果出现视频加载失败的情况,请点击“打开视频”播放<br>
-            为畅享极致视频体验,我们特此提供了超清版本供您下载约:20G<br>
-            如果您需要,建议使用 <a style="text-decoration: none; color: rgb(85, 170, 255);"
-                href="https://motrix.app/download">Aria2 系列软件</a> 下载,速度翻倍!<br>
-            影片大小约:2GB,请注意流量消耗 仅供学习网页编写与云存储研究<br>
-            微领袖影视 · 周周公益 · 第三周
+            微领袖周周公益 · 第三周 · 《Heidi》
         </footer>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const snowflakeCount = 100; // 雪花数量
+            const snowflakeCount = 100;
             const snowContainer = document.body;
 
             for (let i = 0; i < snowflakeCount; i++) {
                 const snowflake = document.createElement('div');
                 snowflake.classList.add('snowflake');
 
-                // 随机设置雪花的大小
-                const size = Math.random() * 5 + 2; // 雪花大小在2px到7px之间
+                const size = Math.random() * 5 + 2;
                 snowflake.style.width = `${size}px`;
                 snowflake.style.height = `${size}px`;
 
-                // 随机设置雪花的初始位置
                 snowflake.style.left = `${Math.random() * 100}vw`;
 
-                // 随机延迟动画的开始时间，确保雪花从不同的位置开始
                 snowflake.style.animationDelay = `${Math.random() * 5}s`;
 
-                // 随机调整雪花的下落速度
-                snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`; // 5秒到15秒之间
+                snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`;
 
-                // 随机设置透明度
-                snowflake.style.opacity = Math.random() * 0.5 + 0.3; // 0.3 到 0.8 之间
+                snowflake.style.opacity = Math.random() * 0.5 + 0.3;
 
-                // 随机旋转效果
                 snowflake.style.transform = `rotate(${Math.random() * 360}deg)`;
 
                 snowContainer.appendChild(snowflake);
@@ -516,26 +493,18 @@
     </script>
     <script>
         document.getElementById("copyButton").addEventListener("click", function () {
-            // 获取隐藏元素的文本内容
             var textToCopy = document.getElementById("textToCopy").innerText;
 
-            // 使用 Clipboard API 复制文本
             navigator.clipboard.writeText(textToCopy).then(function () {
-                // 成功后可以显示提示信息
                 alert("链接已复制到剪贴板！");
             }).catch(function (err) {
-                // 处理错误
                 console.error("复制失败: ", err);
             });
         });
     </script>
-    <!-- 远山层次1 -->
     <div class="mountains-layer1"></div>
-    <!-- 山脉层次2 -->
     <div class="mountains-layer2"></div>
-    <!-- 山脉层次3 -->
     <div class="mountains-layer3"></div>
-    <!-- 最前面的山脉层次4 -->
     <div class="mountains-layer4"></div>
 </body>
 
