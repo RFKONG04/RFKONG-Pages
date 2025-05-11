@@ -58,8 +58,12 @@
             padding: 30px;
             border-radius: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
+            width: 350px;
+            height: auto;
             display: none;
+            position: relative;
+            overflow-y: auto;
+            aspect-ratio: 1;
         }
 
         @media (max-width: 700px) {
@@ -67,11 +71,15 @@
                 text-align: center;
                 background-color: rgba(255, 255, 255, 0.2);
                 backdrop-filter: blur(10px);
-                padding: 30px;
+                padding: 20px;
                 border-radius: 25px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                max-width: 320px;
+                width: 350px;
+                height: auto;
                 display: none;
+                position: relative;
+                overflow-y: auto;
+                aspect-ratio: 1;
             }
         }
 
@@ -80,29 +88,25 @@
             font-size: 30px;
             margin-bottom: 20px;
             color: #000;
-            /* 文字颜色 */
         }
 
         p {
             font-family: 'ali', sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 1;
             margin-bottom: 20px;
             color: #000;
-            /* 文字颜色 */
         }
 
         .alert {
             color: rgb(0, 0, 0);
             background-color: rgba(255, 255, 255, 0.8);
-            /* 半透明背景色 */
             padding: 25px;
             border-radius: 15px;
             line-height: 1.8;
             font-size: 20px;
             font-weight: bold;
             display: none;
-            /* 默认隐藏，按需显示 */
         }
 
         #countdown-text {
@@ -159,6 +163,7 @@
         <p>欢迎您 &nbsp;&bull;&nbsp;来到 &nbsp;&bull;&nbsp;微领袖影视</p>
         <p>此项目为微领袖影视公益项目</p>
         <p>我们仅会保留此专题1周时间供您欣赏</p>
+        <small>(其实我们并没有那样做,是的,删掉他们)</small>
         <p>一周之后,将上新新的专题</p>
         <p id="countdown-text"><span id="countdown">16</span> 秒后进入</p>
         <footer>&copy; 2025 <a href="../index.html" target="_blank">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
