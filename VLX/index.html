@@ -22,197 +22,121 @@
         }
 
         body {
-            font-family: 'ali', "Arial", sans-serif;
             margin: 0;
             padding: 0;
+            font-family: 'ali', Arial, sans-serif;
+            background: linear-gradient(45deg, #ffe6e6, #e6f7ff, #fffbe6);
+            background-size: 400% 400%;
+            animation: flow 12s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            background-color: #d1d1d1;
-            background:
-                linear-gradient(45deg, rgba(255, 154, 158, 0.8), rgba(250, 208, 196, 0.8), rgba(161, 196, 253, 0.8), rgba(194, 233, 251, 0.8), rgba(255, 204, 153, 0.8), rgba(255, 230, 189, 0.8));
-            background-size: 400% 400%;
-            animation: flowAnimation 12s ease infinite;
+            min-height: 100vh;
+            color: #333;
         }
 
-
-        @keyframes flowAnimation {
+        @keyframes flow {
             0% {
-                background-position: 0% 50%, 100% 50%, 0% 50%;
+                background-position: 0% 50%;
             }
 
             50% {
-                background-position: 100% 50%, 0% 50%, 100% 50%;
+                background-position: 100% 50%;
             }
 
             100% {
-                background-position: 0% 50%, 100% 50%, 0% 50%;
+                background-position: 0% 50%;
             }
         }
 
         .container {
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 25px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
             max-width: 400px;
-            display: none;
-        }
-
-        @media (max-width: 700px) {
-            .container {
-                text-align: center;
-                background-color: rgba(255, 255, 255, 0.2);
-                backdrop-filter: blur(10px);
-                padding: 30px;
-                border-radius: 25px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                max-width: 320px;
-                display: none;
-            }
+            width: 90%;
+            padding: 35px 25px;
+            margin: auto;
         }
 
         h1 {
-            font-family: 'ali', sans-serif;
-            font-size: 30px;
+            font-size: 24px;
+            font-weight: bold;
             margin-bottom: 20px;
             color: #000;
-            /* 文字颜色 */
         }
 
         p {
-            font-family: 'ali', sans-serif;
-            font-size: 18px;
-            line-height: 1;
-            margin-bottom: 20px;
-            color: #000;
-            /* 文字颜色 */
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
         .alert {
-            color: rgb(0, 0, 0);
-            background-color: rgba(255, 255, 255, 0.8);
-            /* 半透明背景色 */
-            padding: 25px;
-            border-radius: 15px;
-            line-height: 1.8;
-            font-size: 20px;
-            font-weight: bold;
             display: none;
-            /* 默认隐藏，按需显示 */
-        }
-
-        #countdown-text {
-            font-size: 20px;
-            color: #333;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 400px;
         }
 
         footer {
+            margin-top: 25px;
             font-size: 14px;
-            margin-top: 20px;
-            color: #000000;
+            color: #666;
         }
 
         footer a {
+            color: #007bff;
+            text-decoration: none;
             font-weight: bold;
-            color: #0052b1c3;
-            text-decoration: none;
-        }
-
-        .movie-info {
-            text-align: center;
-            text-decoration: none;
-            margin-top: 0.5em;
         }
 
         .movie-info a {
-            color: #0052b1c3;
-            text-align: center;
+            color: #007bff;
             text-decoration: none;
-        }
-
-        .movie-link {
-            display: inline-block;
-            margin: 3px;
-            padding: 8px;
-            background-color: #000000;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .movie-link:hover {
-            background-color: #ff9999;
+            font-size: 14px;
         }
     </style>
 </head>
 
 <body>
+
     <div id="alert" class="alert"></div>
 
     <div id="content" class="container">
-        <h1>微领袖·周周公益</h1>
-        <p>欢迎您 &nbsp;&bull;&nbsp;来到 &nbsp;&bull;&nbsp;微领袖影视</p>
-        <p>此项目为微领袖影视公益项目</p>
-        <p>我们仅会保留此专题1周时间供您欣赏</p>
-        <p>一周之后,将上新新的专题</p>
-        <p id="countdown-text"><span id="countdown">16</span> 秒后进入</p>
-        <footer>&copy; 2025 <a href="../index.html" target="_blank">超凡如风科技</a>&nbsp;·&nbsp;微领袖影视</footer>
-        <div class="movie-info">
-            <small><a href="./con.html">往期专题</a></small>
-        </div>
+        <h1>微领袖影视升级公告</h1>
+        <p>为了给您带来更优质的观影体验，<br>微领袖影视正在进行系统升级与内容优化。</p>
+        <p>升级期间部分功能暂不可用，<br>感谢您的理解与支持，我们将尽快恢复服务。</p>
+        <footer>&copy; 2025 <a href="../index.html" target="_blank">超凡如风科技</a> · 微领袖影视</footer>
     </div>
 
     <script>
-        var count = 16;
-        var intervalId;
-
-        function startCountdown() {
-            intervalId = setInterval(function () {
-                count--;
-                document.getElementById("countdown").innerHTML = count;
-                if (count <= 0) {
-                    clearInterval(intervalId);
-                    window.location.href = "1900.html"; // 自动跳转页面
-                }
-            }, 1000);
-        }
-
-        function stopCountdown() {
-            clearInterval(intervalId); // 停止倒计时
-        }
-
-        function isChromeBrowser() {
-            return /Chrome/i.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        }
-
         function isWeChatBrowser() {
             return /MicroMessenger/i.test(navigator.userAgent);
         }
 
-        function isEdgeBrowser() {
-            return /Edg\//i.test(navigator.userAgent); // 检测 Edge 浏览器
+        function showAlert(message) {
+            document.getElementById('alert').innerHTML = message;
+            document.getElementById('alert').style.display = 'block';
         }
 
-        // if (isEdgeBrowser()) {
-        //     document.getElementById('alert').style.display = 'block'; // Edge 浏览器提示
-        //     document.getElementById('alert').innerHTML = '目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！';
-        // } else 
-        if (isWeChatBrowser()) {
-            document.getElementById('alert').style.display = 'block'; // 微信浏览器提示
-            document.getElementById('alert').innerHTML = '目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！';
-        } else if (isChromeBrowser()) {
-            document.getElementById('content').style.display = 'block'; // Chrome 浏览器可以访问
-            startCountdown(); // 开启倒计时
+        function showContent() {
+            document.getElementById('content').style.display = 'block';
         }
-        // else {
-        //     document.getElementById('alert').style.display = 'block'; // 其他浏览器提示（如需）
-        //     document.getElementById('alert').innerHTML = '该浏览器暂不支持访问<br>请使用 Chrome 浏览器！';
-        // }
+
+        if (isWeChatBrowser()) {
+            showAlert('目前暂不支持微信端访问<br>请在手机浏览器中打开以观看<br>感谢你的理解！');
+        } else {
+            showContent();
+        }
     </script>
 
 </body>
