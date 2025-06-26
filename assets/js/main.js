@@ -1,3 +1,4 @@
+//@RFKONG 2025 JS
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     initNavigation();
@@ -68,13 +69,9 @@ function initScrollTriggeredAnimations() {
     });
 }
 function initNavigation() {
-    const navbar = document.getElementById('navbar');
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
     navToggle.addEventListener('click', () => {
         const isActive = navMenu.classList.toggle('active');
         navToggle.classList.toggle('active');
