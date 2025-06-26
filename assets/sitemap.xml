@@ -1,67 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- 首页 (超凡如风科技) -->
-  <url>
-    <loc>https://www.rfkong.top</loc>
-    <lastmod>2024-12-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- 微领袖影视 -->
-  <url>
-    <loc>https://www.rfkong.top/with</loc>
-    <lastmod>2024-12-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 微领袖·周周公益 -->
-  <url>
-    <loc>https://www.rfkong.top/VLX</loc>
-    <lastmod>2024-12-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- 如风智绘 -->
-  <url>
-    <loc>https://rfzh.art.blog</loc>
-    <lastmod>2024-12-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- 云盘 -->
-  <url>
-    <loc>https://vps.rfkong.top</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- s.c.s -->
-  <url>
-    <loc>https://scs.data.blog</loc>
-    <lastmod>2024-12-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- RF.GPT AI -->
-  <url>
-    <loc>https://rfgpt.code.blog</loc>
-    <lastmod>2024-12-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- 关于我们 -->
-  <url>
-    <loc>https://www.rfkong.top/assets/about.html</loc>
-    <lastmod>2024-12-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-</urlset>
+    <!-- 首页 -->
+    <url>
+        <loc>https://www.rfkong.top/</loc>
+        <lastmod>2025-06-26T00:00:00+08:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- 服务页面 -->
+    <url>
+        <loc>https://www.rfkong.top/#services</loc>
+        <lastmod>2025-06-26T00:00:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- 项目页面 -->
+    <url>
+        <loc>https://www.rfkong.top/#projects</loc>
+        <lastmod>2025-06-26T00:00:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- 关于页面 -->
+    <url>
+        <loc>https://www.rfkong.top/about.html</loc>
+        <lastmod>2025-06-26T00:00:00+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 联系页面 -->
+    <url>
+        <loc>https://www.rfkong.top/#contact</loc>
+        <lastmod>2025-06-26T00:00:00+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 项目详情页面 -->
+    <url>
+        <loc>https://www.rfkong.top/v</loc>
+        <lastmod>2025-06-26T00:00:00+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://www.rfkong.top/VLX</loc>
+        <lastmod>2025-06-26T00:00:00+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- 外部链接项目 -->
+    <url>
+        <loc>https://me.rfkong.top</loc>
+        <lastmod>2025-06-26T00:00:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://vps.rfkong.top</loc>
+        <lastmod>2025-06-26T00:00:00+08:00</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://rfai.top</loc>
+        <lastmod>2025-06-26T00:00:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://scs.data.blog</loc>
+        <lastmod>2025-06-26T00:00:00+08:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+</urlset>    
