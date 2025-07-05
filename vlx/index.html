@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh" class="dark">
+<!-- @RFKONG 2025 VLX,HTML -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="微领袖影视 - 高品质影视平台，提供最新电影、电视剧、综艺等内容，支持多种设备观看。">
+    <meta name="keywords" content="影视, 电影, 电视剧, 综艺, 在线观影, 高清影视, 微领袖影视">
+    <meta name="author" content="微领袖影视团队">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>微领袖影视 - 高品质影视平台</title>
+    <script src="./web.js"></script>
+    <link href="./font-awesome.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#722ED1',
+                        accent: '#FF7D00',
+                        'dark-bg': '#121212', 'dark-surface': '#1E1E1E', 'dark-text': '#E0E0E0', 'dark-text-secondary': '#A0A0A0',
+                        'light-bg': '#F5F5F7', 'light-surface': '#FFFFFF', 'light-text': '#1D1D1F', 'light-text-secondary': '#6E6E73',
+                    },
+                    fontFamily: { inter: ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @font-face {
+            font-family: 'Alimama';
+            src: url('./fonts/Alimama.woff2') format('woff2');
+        }
+        html::-webkit-scrollbar {
+            width: 0px;
+        }
+        html::-webkit-scrollbar-track {
+            background: rgb(179, 177, 177);
+            border-radius: 10px;
+        }
+        html::-webkit-scrollbar-thumb {
+            background: rgb(136, 136, 136);
+            border-radius: 10px;
+        }
+        html::-webkit-scrollbar-thumb:hover {
+            background: rgb(100, 100, 100);
+        }
+        html::-webkit-scrollbar-thumb:active {
+            background: rgb(68, 68, 68);
+        }
+        @layer base {
+            body { @apply bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text font-inter antialiased; font-family: 'Alimama','Inter',sans-serif; }
+            html { scroll-behavior: smooth; }
+        }
+        @layer utilities {
+            .text-balance { text-wrap: balance; }
+            .scrollbar-hide::-webkit-scrollbar { display: none; }
+            .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+            .transition-transform-shadow { @apply transition-all duration-300 ease-in-out; }
+            .card-hover { @apply hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20; }
+            .btn-hover { @apply hover:scale-105 hover:shadow-lg; }
+            .icon-hover { @apply hover:text-primary transition-colors duration-300; }
+            .fade-in { animation: fadeIn 0.6s ease-out forwards; }
+            .slide-up { animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    </style>
+</head>
+
+<body class="transition-colors duration-300">
+    <div id="loader" class="fixed inset-0 z-[100] flex items-center justify-center bg-light-bg dark:bg-dark-bg">
+        <div class="flex flex-col items-center">
+            <i class="fa fa-film text-primary text-5xl animate-bounce"></i>
+            <p class="mt-4 text-light-text-secondary dark:text-dark-text-secondary">微领袖影视精彩呈现...</p>
+        </div>
+    </div>
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 px-2 md:px-4 transition-all duration-300">
+        <div id="navbar-content"
+            class="w-full bg-light-surface/80 dark:bg-dark-surface/80 backdrop-blur-lg rounded-b-2xl shadow-sm transition-all duration-300">
+            <div class="container mx-auto flex items-center justify-between h-16 px-4 md:px-6">
+                <a href="#" class="text-xl md:text-2xl font-bold text-primary flex items-center">
+                    <i class="fa fa-film mr-2"></i><span>微领袖影视</span>
+                </a>
+                <nav class="hidden lg:flex items-center space-x-8">
+                    <a href="#" class="font-semibold text-primary">首页</a>
+                    <a href="#" class="text-light-text-secondary dark:text-dark-text-secondary icon-hover">电影</a>
+                    <a href="#" class="text-light-text-secondary dark:text-dark-text-secondary icon-hover">电视剧</a>
+                    <a href="#" class="text-light-text-secondary dark:text-dark-text-secondary icon-hover">综艺</a>
+                </nav>
+                <div class="flex items-center space-x-2 md:space-x-4">
+                    <div class="relative hidden md:block">
+                        <input type="text" id="search-input" placeholder="搜索..."
+                            class="w-48 bg-light-bg dark:bg-dark-bg rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300">
+                        <i
+                            class="fa fa-search absolute left-4 top-1/2 -translate-y-1/2 text-light-text-secondary dark:text-dark-text-secondary"></i>
+                    </div>
+                    <button id="theme-toggle"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-light-bg dark:bg-dark-bg hover:ring-2 hover:ring-primary/50 transition-all">
+                        <i id="theme-icon" class="fa"></i>
+                    </button>
+                    <button id="mobile-menu-toggle"
+                        class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full bg-light-bg dark:bg-dark-bg hover:ring-2 hover:ring-primary/50 transition-all">
+                        <i id="mobile-menu-icon" class="fa fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-light-surface dark:bg-dark-surface p-8 transform -translate-x-full transition-transform duration-300 ease-in-out">
+        <nav class="flex flex-col space-y-6 text-left text-xl mt-12">
+            <a href="#" class="font-semibold text-primary py-2">首页</a>
+            <a href="#" class="text-light-text-secondary dark:text-dark-text-secondary icon-hover py-2">电影</a>
+            <a href="#" class="text-light-text-secondary dark:text-dark-text-secondary icon-hover py-2">电视剧</a>
+            <a href="#" class="text-light-text-secondary dark:text-dark-text-secondary icon-hover py-2">综艺</a>
+        </nav>
+        <div class="relative mt-8">
+            <input type="text" id="mobile-search-input" placeholder="搜索..."
+                class="w-full bg-light-bg dark:bg-dark-bg rounded-full py-3 pl-12 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+            <i
+                class="fa fa-search absolute left-5 top-1/2 -translate-y-1/2 text-light-text-secondary dark:text-dark-text-secondary"></i>
+        </div>
+    </div>
+    <main class="pt-24 md:pt-28 pb-16">
+        <div id="list-page">
+            <section class="container mx-auto px-4 mb-16 fade-in">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/20">
+                    <img id="featured-cover" src="" alt="热门电影"
+                        class="w-full h-full object-cover aspect-[16/9] md:aspect-[21/9]">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 text-white">
+                        <div class="max-w-3xl">
+                            <span
+                                class="bg-accent text-white px-3 py-1 rounded-full text-xs font-semibold slide-up">编辑精选</span>
+                            <h1 id="featured-title"
+                                class="text-3xl md:text-5xl font-bold mt-3 mb-4 text-shadow slide-up"
+                                style="animation-delay: 0.1s;"></h1>
+                            <p id="featured-desc"
+                                class="hidden md:block text-gray-300 text-balance line-clamp-2 mb-6 slide-up"
+                                style="animation-delay: 0.2s;"></p>
+                            <div class="flex items-center gap-4 slide-up" style="animation-delay: 0.3s;">
+                                <button id="featured-play-btn"
+                                    class="bg-primary text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 btn-hover transition-transform-shadow">
+                                    <i class="fa fa-play"></i> 立即观看
+                                </button>
+                                <button
+                                    class="bg-white/20 backdrop-blur-sm text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 btn-hover transition-transform-shadow">
+                                    <i class="fa fa-plus"></i> 加入片单
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-0">探索电影</h2>
+                    <div class="flex items-center gap-2">
+                        <select id="category-select"
+                            class="bg-light-surface dark:bg-dark-surface rounded-full py-2 px-4 appearance-none focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer"></select>
+                        <button id="sort-by-date"
+                            class="px-4 py-2 rounded-full text-sm bg-light-surface dark:bg-dark-surface transition-colors"><i
+                                class="fa fa-calendar-o mr-1"></i> 最新</button>
+                        <button id="sort-by-rating"
+                            class="px-4 py-2 rounded-full text-sm bg-light-surface dark:bg-dark-surface transition-colors"><i
+                                class="fa fa-star-o mr-1"></i> 热门</button>
+                    </div>
+                </div>
+                <div id="movie-list"
+                    class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-6">
+                </div>
+            </section>
+        </div>
+        <div id="play-page" class="hidden">
+            <div id="play-page-backdrop" class="fixed inset-0 z-[-1] transition-all duration-500 bg-cover bg-center">
+                <div class="absolute inset-0 bg-light-bg/80 dark:bg-dark-bg/80 backdrop-blur-2xl"></div>
+            </div>
+            <div class="container mx-auto px-4 fade-in">
+                <button id="back-btn"
+                    class="mb-6 flex items-center gap-2 text-light-text-secondary dark:text-dark-text-secondary icon-hover">
+                    <i class="fa fa-arrow-left"></i> 返回列表
+                </button>
+                <div class="bg-light-surface dark:bg-dark-surface p-6 md:p-8 rounded-2xl shadow-lg mb-8">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+                        <div class="flex-shrink-0 md:w-1/4">
+                            <img id="movie-poster" src="" alt="电影海报"
+                                class="rounded-xl shadow-xl w-48 md:w-full mx-auto transition-transform-shadow card-hover">
+                        </div>
+                        <div class="flex-grow">
+                            <h1 id="play-movie-title" class="text-3xl md:text-4xl font-bold text-balance"></h1>
+                            <div id="movie-meta" class="flex flex-wrap gap-2 mt-4 mb-6"></div>
+                            <div class="flex items-center gap-4 mb-6">
+                                <button id="details-play-btn"
+                                    class="bg-primary text-white font-semibold px-6 py-3 rounded-full flex items-center gap-2 btn-hover transition-transform-shadow">
+                                    <i class="fa fa-play"></i> 立即播放
+                                </button>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">剧情简介</h3>
+                            <p id="movie-description"
+                                class="text-light-text-secondary dark:text-dark-text-secondary leading-relaxed text-balance text-sm">
+                            </p>
+                            <div id="movie-details"
+                                class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mt-6 border-t border-black/10 dark:border-white/10 pt-6 text-sm">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="video-player-container"
+                    class="relative aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
+                    <video id="movie-player" class="w-full h-full bg-black" controls poster=""></video>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-light-surface dark:bg-dark-surface py-8 md:py-12 mt-10 md:mt-16">
+        <div class="container mx-auto px-4 text-center text-light-text-secondary dark:text-dark-text-secondary">
+            <p class="font-semibold text-base md:text-lg text-primary mb-1 md:mb-2">微领袖影视 · VLX</p>
+            <p class="text-xs md:text-sm leading-snug mt-3">本站资源均来自互联网，仅供学习交流，不得用于商业用途。</p>
+            <p class="text-[10px] md:text-xs mt-3 md:mt-4">© 2025 超凡如风科技·微领袖影视 All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="app.js" defer></script>
+</body>
+
+</html><!-- @RFKONG 2025 VLX,HTML -->
