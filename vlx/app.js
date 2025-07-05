@@ -198,8 +198,8 @@ const movies = [
         language: "汉语普通话",
         releaseDate: "2025-05-01",
         description: "一场意外的危机公关，让“烤肠哥”周大江（常远 饰）阴差阳错与顶流网红小海茉（邓家佳 饰）组成了“预制情侣”，被迫为霸道总裁秦天龙（王耀庆 饰）“顶包”的周大江，误打误撞成为了直播新宠。手忙脚乱地应对着流量规则，在成为新晋网红的路上笑料百出。",
-        videoUrl: `${VIDEO_URL}/rskm.mkv`,
-        isFeatured: true,
+        videoUrl: `${VIDEO_URL}/rskm.mp4`,
+        isFeatured: false,
         rating: 6.3
     },
     {
@@ -217,7 +217,7 @@ const movies = [
         releaseDate: "2025-04-30",
         description: "上世纪七十年代，青岛姑娘臧健和（马丽 饰）带着两个女儿被迫流落他乡。为了维持生计抚养女儿，臧姑娘白天洗碗，晚上擦车...",
         videoUrl: `${VIDEO_URL}/sjhh.mp4`,
-        isFeatured: false,
+        isFeatured: true,
         rating: 6.4
     }
 ];
