@@ -180,7 +180,7 @@ const movies = [
         language: "无对白",
         releaseDate: "2016-06-17",
         description: "晨曦微茫的小岛上，海水轻柔俯视着纤尘不染的沙滩。伴随着浪花的涌动，浮游生物、海藻、海螺、扇贝等海洋生命搁浅在陆地之上，等待它们的则是饥肠辘辘的捕食者。",
-        videoUrl: `${VIDEO_URL}/piper.mkv`,
+        videoUrl: `${VIDEO_URL}/piper.mp4`,
         isFeatured: false,
         rating: 9.4
     },
@@ -224,187 +224,187 @@ const movies = [
 const categories = ["全部", "科幻", "剧情", "冒险", "动画", "灾难"];
 
 document.addEventListener('DOMContentLoaded', () => {
-	const dom = {
-		loader: document.getElementById('loader'),
-		navbar: document.getElementById('navbar'),
-		navbarContent: document.getElementById('navbar-content'),
-		themeToggle: document.getElementById('theme-toggle'),
-		themeIcon: document.getElementById('theme-icon'),
-		mobileMenuToggle: document.getElementById('mobile-menu-toggle'),
-		mobileMenuIcon: document.getElementById('mobile-menu-icon'),
-		mobileMenu: document.getElementById('mobile-menu'),
-		searchInput: document.getElementById('search-input'),
-		mobileSearchInput: document.getElementById('mobile-search-input'),
-		listPage: document.getElementById('list-page'),
-		playPage: document.getElementById('play-page'),
-		movieList: document.getElementById('movie-list'),
-		categorySelect: document.getElementById('category-select'),
-		sortByDateBtn: document.getElementById('sort-by-date'),
-		sortByRatingBtn: document.getElementById('sort-by-rating'),
-		backBtn: document.getElementById('back-btn'),
-		featured: {
-			cover: document.getElementById('featured-cover'),
-			title: document.getElementById('featured-title'),
-			desc: document.getElementById('featured-desc'),
-			playBtn: document.getElementById('featured-play-btn'),
-		},
-		player: {
-			backdrop: document.getElementById('play-page-backdrop'),
-			videoContainer: document.getElementById('video-player-container'),
-			video: document.getElementById('movie-player'),
-			poster: document.getElementById('movie-poster'),
-			title: document.getElementById('play-movie-title'),
-			meta: document.getElementById('movie-meta'),
-			detailsPlayBtn: document.getElementById('details-play-btn'),
-			description: document.getElementById('movie-description'),
-			details: document.getElementById('movie-details'),
-		},
-	};
-	let currentSort = 'date';
-	let currentCategory = '全部';
-	const applyTheme = (theme) => {
-		if (theme === 'dark') {
-			document.documentElement.classList.add('dark');
-			dom.themeIcon.className = 'fa fa-sun-o text-yellow-400'
-		} else {
-			document.documentElement.classList.remove('dark');
-			dom.themeIcon.className = 'fa fa-moon-o text-gray-600'
-		}
-	};
-	const toggleTheme = () => {
-		const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
-		localStorage.setItem('theme', newTheme);
-		applyTheme(newTheme)
-	};
-	const toggleMobileMenu = () => {
-		const isMenuOpen = !dom.mobileMenu.classList.contains('-translate-x-full');
-		if (isMenuOpen) {
-			dom.mobileMenu.classList.add('-translate-x-full');
-			dom.mobileMenuIcon.classList.remove('fa-times');
-			dom.mobileMenuIcon.classList.add('fa-bars')
-		} else {
-			dom.mobileMenu.classList.remove('-translate-x-full');
-			dom.mobileMenuIcon.classList.remove('fa-bars');
-			dom.mobileMenuIcon.classList.add('fa-times')
-		}
-	};
-	const createMovieCard = (movie) => {
-		const card = document.createElement('div');
-		card.className = 'group fade-in card-hover transition-transform-shadow';
-		card.innerHTML = `<div class="relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer"><img src="${movie.poster}"alt="${movie.title}"class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-0 left-0 p-3 text-white"><h3 class="font-semibold truncate">${movie.title}</h3><p class="text-xs text-gray-300">${movie.year}</p></div><div class="absolute top-2 right-2 bg-primary/80 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1"><i class="fa fa-star"></i><span>${movie.rating}</span></div></div>`;
-		card.addEventListener('click', () => showPlayPage(movie.id));
-		return card
-	};
-	const renderMovies = () => {
-		let filtered = currentCategory === '全部' ? [...movies] : movies.filter(m => m.genre.includes(currentCategory));
-		const searchTerm = dom.searchInput.value.toLowerCase() || dom.mobileSearchInput.value.toLowerCase();
-		if (searchTerm) {
-			filtered = filtered.filter(m => m.title.toLowerCase().includes(searchTerm) || m.actors.toLowerCase().includes(searchTerm))
-		}
-		if (currentSort === 'date') {
-			filtered.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
-		} else if (currentSort === 'rating') {
-			filtered.sort((a, b) => b.rating - a.rating)
-		}
-		dom.movieList.innerHTML = '';
-		if (filtered.length === 0) {
-			dom.movieList.innerHTML = `<p class="col-span-full text-center text-light-text-secondary dark:text-dark-text-secondary">没有找到匹配的电影。</p>`
-		} else {
-			filtered.forEach(movie => dom.movieList.appendChild(createMovieCard(movie)))
-		}
-	};
-	const updateSortButtons = () => {
-		[dom.sortByDateBtn, dom.sortByRatingBtn].forEach(btn => {
-			btn.classList.remove('bg-primary', 'text-white');
-			btn.classList.add('bg-light-surface', 'dark:bg-dark-surface')
-		});
-		const activeBtn = currentSort === 'date' ? dom.sortByDateBtn : dom.sortByRatingBtn;
-		activeBtn.classList.add('bg-primary', 'text-white');
-		activeBtn.classList.remove('bg-light-surface', 'dark:bg-dark-surface')
-	};
-	const showPlayPage = (movieId) => {
-		const movie = movies.find(m => m.id === movieId);
-		if (!movie) return;
-		dom.player.video.poster = movie.cover;
-		dom.player.video.src = movie.videoUrl;
-		dom.player.poster.src = movie.poster;
-		dom.player.title.textContent = movie.title;
-		dom.player.description.textContent = movie.description;
-		dom.player.meta.innerHTML = `<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">${movie.genre.split('/')[0]}</span><span class="bg-gray-500/10 text-light-text-secondary dark:text-dark-text-secondary px-3 py-1 rounded-full text-sm font-medium">${movie.year}</span><span class="bg-gray-500/10 text-light-text-secondary dark:text-dark-text-secondary px-3 py-1 rounded-full text-sm font-medium">${movie.runtime}</span><span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1"><i class="fa fa-star"></i>${movie.rating}</span>`;
-		dom.player.details.innerHTML = `<p><strong class="font-semibold text-light-text dark:text-dark-text">导演:</strong><span class="text-light-text-secondary dark:text-dark-text-secondary">${movie.director}</span></p><p><strong class="font-semibold text-light-text dark:text-dark-text">主演:</strong><span class="text-light-text-secondary dark:text-dark-text-secondary">${movie.actors}</span></p><p><strong class="font-semibold text-light-text dark:text-dark-text">地区:</strong><span class="text-light-text-secondary dark:text-dark-text-secondary">${movie.country}</span></p><p><strong class="font-semibold text-light-text dark:text-dark-text">语言:</strong><span class="text-light-text-secondary dark:text-dark-text-secondary">${movie.language}</span></p>`;
-		dom.player.backdrop.style.backgroundImage = `url(${movie.cover})`;
-		dom.listPage.style.display = 'none';
-		dom.playPage.style.display = 'block';
-		window.scrollTo(0, 0)
-	};
-	const showListPage = () => {
-		dom.player.video.pause();
-		dom.playPage.style.display = 'none';
-		dom.listPage.style.display = 'block';
-		window.scrollTo(0, 0)
-	};
-	const init = () => {
-		setTimeout(() => {
-			dom.loader.style.opacity = '0';
-			setTimeout(() => dom.loader.style.display = 'none', 500)
-		}, 800);
-		const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-		applyTheme(savedTheme);
-		const featuredMovie = movies.find(m => m.isFeatured) || movies[0];
-		dom.featured.cover.src = featuredMovie.cover;
-		dom.featured.title.textContent = featuredMovie.title;
-		dom.featured.desc.textContent = featuredMovie.description;
-		dom.featured.playBtn.addEventListener('click', () => showPlayPage(featuredMovie.id));
-		dom.categorySelect.innerHTML = categories.map(c => `<option value="${c}">${c}</option>`).join('');
-		updateSortButtons();
-		renderMovies();
-		setupEventListeners()
-	};
-	const setupEventListeners = () => {
-		dom.themeToggle.addEventListener('click', toggleTheme);
-		dom.mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-		dom.mobileMenu.querySelectorAll('a').forEach(link => {
-			link.addEventListener('click', () => {
-				if (!dom.mobileMenu.classList.contains('-translate-x-full')) {
-					toggleMobileMenu()
-				}
-			})
-		});
-		dom.backBtn.addEventListener('click', showListPage);
-		dom.player.detailsPlayBtn.addEventListener('click', () => {
-			dom.player.videoContainer.scrollIntoView({
-				behavior: 'smooth',
-				block: 'center'
-			});
-			dom.player.video.play()
-		});
-		dom.categorySelect.addEventListener('change', (e) => {
-			currentCategory = e.target.value;
-			renderMovies()
-		});
-		dom.sortByDateBtn.addEventListener('click', () => {
-			currentSort = 'date';
-			updateSortButtons();
-			renderMovies()
-		});
-		dom.sortByRatingBtn.addEventListener('click', () => {
-			currentSort = 'rating';
-			updateSortButtons();
-			renderMovies()
-		});
-		[dom.searchInput, dom.mobileSearchInput].forEach(input => {
-			input.addEventListener('input', renderMovies)
-		});
-		window.addEventListener('scroll', () => {
-			if (dom.navbarContent) {
-				if (window.scrollY > 20) {
-					dom.navbarContent.classList.add('shadow-xl', 'bg-light-surface/95', 'dark:bg-dark-surface/95')
-				} else {
-					dom.navbarContent.classList.remove('shadow-xl', 'bg-light-surface/95', 'dark:bg-dark-surface/95')
-				}
-			}
-		})
-	};
-	init()
+    const dom = {
+        loader: document.getElementById('loader'),
+        navbar: document.getElementById('navbar'),
+        navbarContent: document.getElementById('navbar-content'),
+        themeToggle: document.getElementById('theme-toggle'),
+        themeIcon: document.getElementById('theme-icon'),
+        mobileMenuToggle: document.getElementById('mobile-menu-toggle'),
+        mobileMenuIcon: document.getElementById('mobile-menu-icon'),
+        mobileMenu: document.getElementById('mobile-menu'),
+        searchInput: document.getElementById('search-input'),
+        mobileSearchInput: document.getElementById('mobile-search-input'),
+        listPage: document.getElementById('list-page'),
+        playPage: document.getElementById('play-page'),
+        movieList: document.getElementById('movie-list'),
+        categorySelect: document.getElementById('category-select'),
+        sortByDateBtn: document.getElementById('sort-by-date'),
+        sortByRatingBtn: document.getElementById('sort-by-rating'),
+        backBtn: document.getElementById('back-btn'),
+        featured: {
+            cover: document.getElementById('featured-cover'),
+            title: document.getElementById('featured-title'),
+            desc: document.getElementById('featured-desc'),
+            playBtn: document.getElementById('featured-play-btn'),
+        },
+        player: {
+            backdrop: document.getElementById('play-page-backdrop'),
+            videoContainer: document.getElementById('video-player-container'),
+            video: document.getElementById('movie-player'),
+            poster: document.getElementById('movie-poster'),
+            title: document.getElementById('play-movie-title'),
+            meta: document.getElementById('movie-meta'),
+            detailsPlayBtn: document.getElementById('details-play-btn'),
+            description: document.getElementById('movie-description'),
+            details: document.getElementById('movie-details'),
+        },
+    };
+    let currentSort = 'date';
+    let currentCategory = '全部';
+    const applyTheme = (theme) => {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            dom.themeIcon.className = 'fa fa-sun-o text-yellow-400'
+        } else {
+            document.documentElement.classList.remove('dark');
+            dom.themeIcon.className = 'fa fa-moon-o text-gray-600'
+        }
+    };
+    const toggleTheme = () => {
+        const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme)
+    };
+    const toggleMobileMenu = () => {
+        const isMenuOpen = !dom.mobileMenu.classList.contains('-translate-x-full');
+        if (isMenuOpen) {
+            dom.mobileMenu.classList.add('-translate-x-full');
+            dom.mobileMenuIcon.classList.remove('fa-times');
+            dom.mobileMenuIcon.classList.add('fa-bars')
+        } else {
+            dom.mobileMenu.classList.remove('-translate-x-full');
+            dom.mobileMenuIcon.classList.remove('fa-bars');
+            dom.mobileMenuIcon.classList.add('fa-times')
+        }
+    };
+    const createMovieCard = (movie) => {
+        const card = document.createElement('div');
+        card.className = 'group fade-in card-hover transition-transform-shadow';
+        card.innerHTML = `<div class="relative aspect-[2/3] rounded-xl overflow-hidden cursor-pointer"><img src="${movie.poster}"alt="${movie.title}"class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-0 left-0 p-3 text-white"><h3 class="font-semibold truncate">${movie.title}</h3><p class="text-xs text-gray-300">${movie.year}</p></div><div class="absolute top-2 right-2 bg-primary/80 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center gap-1"><i class="fa fa-star"></i><span>${movie.rating}</span></div></div>`;
+        card.addEventListener('click', () => showPlayPage(movie.id));
+        return card
+    };
+    const renderMovies = () => {
+        let filtered = currentCategory === '全部' ? [...movies] : movies.filter(m => m.genre.includes(currentCategory));
+        const searchTerm = dom.searchInput.value.toLowerCase() || dom.mobileSearchInput.value.toLowerCase();
+        if (searchTerm) {
+            filtered = filtered.filter(m => m.title.toLowerCase().includes(searchTerm) || m.actors.toLowerCase().includes(searchTerm))
+        }
+        if (currentSort === 'date') {
+            filtered.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
+        } else if (currentSort === 'rating') {
+            filtered.sort((a, b) => b.rating - a.rating)
+        }
+        dom.movieList.innerHTML = '';
+        if (filtered.length === 0) {
+            dom.movieList.innerHTML = `<p class="col-span-full text-center text-light-text-secondary dark:text-dark-text-secondary">没有找到匹配的电影。</p>`
+        } else {
+            filtered.forEach(movie => dom.movieList.appendChild(createMovieCard(movie)))
+        }
+    };
+    const updateSortButtons = () => {
+        [dom.sortByDateBtn, dom.sortByRatingBtn].forEach(btn => {
+            btn.classList.remove('bg-primary', 'text-white');
+            btn.classList.add('bg-light-surface', 'dark:bg-dark-surface')
+        });
+        const activeBtn = currentSort === 'date' ? dom.sortByDateBtn : dom.sortByRatingBtn;
+        activeBtn.classList.add('bg-primary', 'text-white');
+        activeBtn.classList.remove('bg-light-surface', 'dark:bg-dark-surface')
+    };
+    const showPlayPage = (movieId) => {
+        const movie = movies.find(m => m.id === movieId);
+        if (!movie) return;
+        dom.player.video.poster = movie.cover;
+        dom.player.video.src = movie.videoUrl;
+        dom.player.poster.src = movie.poster;
+        dom.player.title.textContent = movie.title;
+        dom.player.description.textContent = movie.description;
+        dom.player.meta.innerHTML = `<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">${movie.genre.split('/')[0]}</span><span class="bg-gray-500/10 text-light-text-secondary dark:text-dark-text-secondary px-3 py-1 rounded-full text-sm font-medium">${movie.year}</span><span class="bg-gray-500/10 text-light-text-secondary dark:text-dark-text-secondary px-3 py-1 rounded-full text-sm font-medium">${movie.runtime}</span><span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1"><i class="fa fa-star"></i>${movie.rating}</span>`;
+        dom.player.details.innerHTML = `<p><strong class="font-semibold text-light-text dark:text-dark-text">导演:</strong><span class="text-light-text-secondary dark:text-dark-text-secondary">${movie.director}</span></p><p><strong class="font-semibold text-light-text dark:text-dark-text">主演:</strong><span class="text-light-text-secondary dark:text-dark-text-secondary">${movie.actors}</span></p><p><strong class="font-semibold text-light-text dark:text-dark-text">地区:</strong><span class="text-light-text-secondary dark:text-dark-text-secondary">${movie.country}</span></p><p><strong class="font-semibold text-light-text dark:text-dark-text">语言:</strong><span class="text-light-text-secondary dark:text-dark-text-secondary">${movie.language}</span></p>`;
+        dom.player.backdrop.style.backgroundImage = `url(${movie.cover})`;
+        dom.listPage.style.display = 'none';
+        dom.playPage.style.display = 'block';
+        window.scrollTo(0, 0)
+    };
+    const showListPage = () => {
+        dom.player.video.pause();
+        dom.playPage.style.display = 'none';
+        dom.listPage.style.display = 'block';
+        window.scrollTo(0, 0)
+    };
+    const init = () => {
+        setTimeout(() => {
+            dom.loader.style.opacity = '0';
+            setTimeout(() => dom.loader.style.display = 'none', 500)
+        }, 800);
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(savedTheme);
+        const featuredMovie = movies.find(m => m.isFeatured) || movies[0];
+        dom.featured.cover.src = featuredMovie.cover;
+        dom.featured.title.textContent = featuredMovie.title;
+        dom.featured.desc.textContent = featuredMovie.description;
+        dom.featured.playBtn.addEventListener('click', () => showPlayPage(featuredMovie.id));
+        dom.categorySelect.innerHTML = categories.map(c => `<option value="${c}">${c}</option>`).join('');
+        updateSortButtons();
+        renderMovies();
+        setupEventListeners()
+    };
+    const setupEventListeners = () => {
+        dom.themeToggle.addEventListener('click', toggleTheme);
+        dom.mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        dom.mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (!dom.mobileMenu.classList.contains('-translate-x-full')) {
+                    toggleMobileMenu()
+                }
+            })
+        });
+        dom.backBtn.addEventListener('click', showListPage);
+        dom.player.detailsPlayBtn.addEventListener('click', () => {
+            dom.player.videoContainer.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
+            dom.player.video.play()
+        });
+        dom.categorySelect.addEventListener('change', (e) => {
+            currentCategory = e.target.value;
+            renderMovies()
+        });
+        dom.sortByDateBtn.addEventListener('click', () => {
+            currentSort = 'date';
+            updateSortButtons();
+            renderMovies()
+        });
+        dom.sortByRatingBtn.addEventListener('click', () => {
+            currentSort = 'rating';
+            updateSortButtons();
+            renderMovies()
+        });
+        [dom.searchInput, dom.mobileSearchInput].forEach(input => {
+            input.addEventListener('input', renderMovies)
+        });
+        window.addEventListener('scroll', () => {
+            if (dom.navbarContent) {
+                if (window.scrollY > 20) {
+                    dom.navbarContent.classList.add('shadow-xl', 'bg-light-surface/95', 'dark:bg-dark-surface/95')
+                } else {
+                    dom.navbarContent.classList.remove('shadow-xl', 'bg-light-surface/95', 'dark:bg-dark-surface/95')
+                }
+            }
+        })
+    };
+    init()
 });
 // @RFKONG 2025 VLX,JS
