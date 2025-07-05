@@ -68,10 +68,8 @@
     </nav>
     <section id="home" class="hero">
         <div class="hero-background">
-            <video autoplay muted playsinline class="hero-video-background" id="hero-video"
+            <!-- <video autoplay muted playsinline class="hero-video-background" id="hero-video"
                 oncontextmenu="return false;" controlslist="nodownload">
-                <source src="http://wanyue-cloud.xbjstd.cn:5212/f/pJqHV/cfbk.mp4" type="video/mp4">
-                <source src="https://s.vlx.66ghz.com/files/685c0e5796d2b/cfbk.mp4" type="video/mp4">
                 您的浏览器不支持视频标签。
             </video>
             <div class="geometric-shapes">
@@ -80,6 +78,26 @@
                 <div class="shape shape-3"></div>
                 <div class="shape shape-4"></div>
                 <div class="shape shape-5"></div>
+            </div> -->
+            <div class="gradient-bg">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                                result="goo" />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                        </filter>
+                    </defs>
+                </svg>
+                <div class="gradients-container">
+                    <div class="g1"></div>
+                    <div class="g2"></div>
+                    <div class="g3"></div>
+                    <div class="g4"></div>
+                    <div class="g5"></div>
+                    <div class="interactive"></div>
+                </div>
             </div>
         </div>
         <div class="hero-container">
@@ -272,7 +290,29 @@
                 <div class="project-card">
                     <div class="project-image">
                         <div class="project-overlay">
-                            <a href="./v" class="project-link">
+                            <a href="./assets/520.html" class="project-link">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M7 7H17V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">爱绘</h3>
+                        <p class="project-description">专业AI绘画创作平台</p>
+                        <div class="project-tags">
+                            <span class="tag">AI创作</span>
+                            <span class="tag">内容创作</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <a href="./vlx" class="project-link">
                                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" />
@@ -284,32 +324,10 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">微领袖影视</h3>
-                        <p class="project-description">专业影视制作与内容创作平台</p>
+                        <p class="project-description">高质量视频平台</p>
                         <div class="project-tags">
-                            <span class="tag">影视制作</span>
-                            <span class="tag">内容创作</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <div class="project-overlay">
-                            <a href="./VLX" class="project-link">
-                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M7 7H17V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">周周公益</h3>
-                        <p class="project-description">致力于社会公益事业的数字化平台</p>
-                        <div class="project-tags">
-                            <span class="tag">公益事业</span>
-                            <span class="tag">社会责任</span>
+                            <span class="tag">周周公益</span>
+                            <span class="tag">影视分享</span>
                         </div>
                     </div>
                 </div>
