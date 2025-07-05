@@ -67,7 +67,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
@@ -870,7 +870,7 @@ section {
 }
 
 .project-card:nth-child(2) .project-image {
-    background-image: url('../images/pro/520.png')
+    background-image: url('../images/pro/vlxhome.png')
 }
 
 .project-card:nth-child(3) .project-image {
@@ -1120,12 +1120,6 @@ section {
     gap: var(--spacing-2xl)
 }
 
-@media (min-width:992px) {
-    .contact-content {
-        grid-template-columns: 1fr 1.5fr
-    }
-}
-
 .contact-info {
     display: flex;
     flex-direction: column;
@@ -1164,38 +1158,6 @@ section {
 
 .contact-details p {
     color: var(--text-light)
-}
-
-.contact-form {
-    background: var(--light-color);
-    padding: var(--spacing-2xl);
-    border-radius: var(--radius-xl)
-}
-
-.form-group {
-    margin-bottom: var(--spacing-lg)
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: var(--spacing-md);
-    border: 2px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    font-size: var(--font-size-base);
-    font-family: inherit;
-    transition: border-color var(--transition-normal)
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color)
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px
 }
 
 .footer {
