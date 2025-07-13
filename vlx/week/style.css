@@ -469,6 +469,7 @@ a {
 
 footer {
     width: 100%;
+    max-width: 650px;
     text-align: center;
     padding: 20px;
     margin-top: 16px;
@@ -490,4 +491,19 @@ footer .copyright {
     font-size: 10px;
     color: rgba(180, 180, 180, 0.5);
     margin-top: 12px;
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    footer p {
+        font-size: 11px;
+    }
+
+    footer .copyright {
+        font-size: 9px;
+    }
 }
