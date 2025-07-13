@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!-- @RFKONG 2025 周周公益 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微领袖影视❤️周周公益</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://rfkong.top/vlx/favicon.ico" type="image/x-icon">
+    <meta name="description" content="微领袖影视周周公益，推动公益事业，传递爱心与希望。每周更新精选公益电影，致力于打造一个平等而充满快乐的观影平台。记得常来看看哦！❤️">
+    <meta name="keywords" content="影视, 电影, 电视剧, 综艺, 在线观影, 高清影视, 微领袖影视, 周周公益, 公益电影, 爱心, 希望, 平等, 快乐观影">
+    <meta name="author" content="微领袖影视团队">
+</head>
+
+<body>
+    <div id="page-background"></div>
+    <svg style="width:0;height:0;position:absolute;" aria-hidden="true" focusable="false">
+        <linearGradient id="halfGradient">
+            <stop offset="50%" stop-color="#FFD700" />
+            <stop offset="50%" stop-color="rgba(255, 255, 255, 0.2)" />
+        </linearGradient>
+    </svg>
+    <main class="content-wrapper">
+        <div class="movie-card">
+            <div class="movie-img-container">
+                <div class="movie-img" id="movie-background-image"></div>
+                <div class="movie-overlay"></div>
+            </div>
+            <div class="movie-content">
+                <div class="title-row">
+                    <h1 class="movie-title"><span id="movie-title"></span> <span class="year-badge"
+                            id="movie-year"></span>
+                    </h1>
+                    <span class="rating-badge">周周公益</span>
+                </div>
+                <div class="metadata">
+                    <div class="duration">
+                        <svg class="duration-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" />
+                            <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
+                        </svg>
+                        <span id="movie-duration"></span>
+                    </div>
+                </div>
+                <div class="genres" id="movie-genres"></div>
+                <div class="ratings-row">
+                    <div class="star-rating">
+                        <div class="stars" id="movie-stars"></div>
+                        <span class="rating-text" id="movie-rating"></span>
+                    </div>
+                    <div class="likes">
+                        <svg class="heart-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg>
+                        <span class="likes-count" id="movie-votes"></span>
+                    </div>
+                </div>
+                <div class="description-section">
+                    <h5 class="section-title">剧情简介</h5>
+                    <p class="movie-description" id="movie-description"></p>
+                </div>
+                <div class="cast-section">
+                    <h5 class="section-title">主要演员</h5>
+                    <div class="cast-list" id="movie-cast"></div>
+                </div>
+                <div class="action-row">
+                    <div class="watch-btn" id="watch-trailer-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                        <span class="watch-btn-text">立即观看</span>
+                    </div>
+                    <a href="./list" class="action-btn" title="往期回顾" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path fill="currentColor"
+                                d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10m4.82-4.924a7 7 0 1 0-1.853 1.266l-.974-1.755A5 5 0 1 1 17 12h-3z" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p class="footer-brand">微领袖影视 · VLX</p>
+            <p>本站资源均来自互联网，仅供学习交流，不得用于商业用途。</p>
+            <p class="copyright">© 2025 超凡如风科技·微领袖影视 All Rights Reserved.</p>
+        </footer>
+    </main>
+    <div id="player-container-overlay" class="player-overlay">
+        <div id="close-player-btn" class="close-btn">×</div>
+        <div class="play-page-content">
+            <h1 id="play-movie-title"></h1>
+            <div class="video-player-wrapper">
+                <div id="artplayer-container"></div>
+            </div>
+            <div class="play-page-description-wrapper">
+                <h3 class="plot-summary-title">剧情简介</h3>
+                <p id="play-movie-description"></p>
+            </div>
+        </div>
+    </div>
+    <script src="./artplayer.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
