@@ -1,0 +1,509 @@
+/* @RFKONG 2025 周周公益 */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --brand-color: #fe4141;
+    --dark-color: #1e1b26;
+    --accent-color: #e7e7e7;
+    --text-light: #b4b4b4;
+    --text-lighter: #d7d7d7;
+    --section-space: 16px;
+    --card-padding: 24px;
+    --poster-overlay: rgba(30, 27, 38, 0.8);
+}
+
+html::-webkit-scrollbar {
+    width: 0px;
+}
+
+.player-overlay::-webkit-scrollbar {
+    width: 0px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--accent-color);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+#page-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+#page-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 27, 38, 0.95);
+    z-index: -1;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.movie-card {
+    width: 100%;
+    background-color: var(--dark-color);
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+    position: relative;
+}
+
+.movie-img-container {
+    height: 380px;
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.movie-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(30, 27, 38, 0) 30%, rgba(30, 27, 38, 0.7) 60%, rgba(30, 27, 38, 1) 100%);
+    z-index: 1;
+}
+
+.movie-content {
+    padding: var(--card-padding);
+    position: relative;
+    margin-top: -120px;
+    z-index: 2;
+}
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+}
+
+.movie-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    flex: 1;
+    line-height: 1.2;
+}
+
+.year-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-lighter);
+    margin-left: 8px;
+    opacity: 0.85;
+}
+
+.rating-badge {
+    background-color: var(--brand-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
+.metadata {
+    display: flex;
+    align-items: center;
+    margin: 8px 0 var(--section-space);
+}
+
+.duration {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-right: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.duration-icon {
+    width: 14px;
+    height: 14px;
+    fill: var(--text-light);
+    margin-right: 4px;
+}
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: var(--section-space);
+}
+
+.genre-tag {
+    background-color: rgba(254, 65, 65, 0.1);
+    border: 1px solid rgba(254, 65, 65, 0.3);
+    padding: 3px 10px;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-lighter);
+}
+
+.ratings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--section-space);
+    padding-bottom: var(--section-space);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.star-rating {
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    display: flex;
+}
+
+.star {
+    width: 16px;
+    height: 16px;
+    margin-right: 2px;
+}
+
+.star-filled {
+    fill: #FFD700;
+}
+
+.star-half {
+    fill: url(#halfGradient);
+}
+
+.star-empty {
+    fill: rgba(255, 255, 255, 0.2);
+}
+
+.rating-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-lighter);
+    margin-left: 8px;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.heart-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    fill: var(--brand-color);
+}
+
+.likes-count {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.description-section,
+.cast-section {
+    margin-bottom: var(--section-space);
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: var(--text-lighter);
+}
+
+.movie-description {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-light);
+    text-align: justify;
+}
+
+.cast-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cast-name-tag {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.action-row {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, auto);
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.watch-btn {
+    background-color: var(--brand-color);
+    border: none;
+    border-radius: 15px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(254, 65, 65, 0.3);
+}
+
+.watch-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(254, 65, 65, 0.4);
+    background-color: #ff5151;
+}
+
+.watch-btn-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    margin-left: 8px;
+}
+
+.action-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.action-icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--text-lighter);
+}
+
+@media (min-width:768px) {
+    .movie-card {
+        max-width: 650px;
+        display: flex;
+    }
+
+    .movie-img-container {
+        width: 40%;
+        height: auto;
+    }
+
+    .movie-content {
+        width: 60%;
+        margin-top: 0;
+    }
+
+    .movie-overlay {
+        background: linear-gradient(90deg, rgba(30, 27, 38, 0) 0%, var(--poster-overlay) 100%);
+    }
+}
+
+.player-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 27, 38, 0.97);
+    backdrop-filter: blur(5px);
+    display: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    overflow-y: auto;
+    padding: 80px 20px 40px 20px;
+}
+
+.player-overlay.show {
+    display: block;
+    opacity: 1;
+}
+
+.play-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    color: var(--text-lighter);
+}
+
+#play-movie-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+.video-player-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+#artplayer-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.play-page-description-wrapper {
+    width: 100%;
+    max-width: 800px;
+}
+
+.plot-summary-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    color: var(--text-lighter);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+}
+
+#play-movie-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-light);
+}
+
+.player-overlay footer {
+    width: 100%;
+    max-width: 800px;
+    padding-top: 24px;
+    margin-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+    z-index: 1001;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+    color: var(--brand-color);
+}
+
+footer {
+    width: 100%;
+    max-width: 650px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 16px;
+    color: var(--text-light);
+}
+
+footer .footer-brand {
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+footer .copyright {
+    font-size: 10px;
+    color: rgba(180, 180, 180, 0.5);
+    margin-top: 12px;
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 15px;
+        max-width: 100%;
+    }
+
+    footer p {
+        font-size: 11px;
+    }
+
+    footer .copyright {
+        font-size: 9px;
+    }
+}
