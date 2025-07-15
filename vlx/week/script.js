@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: "卡拉·古奇诺" }
             ],
             posterImage: "post.webp",
-            trailerUrl: "https://lz.qaiu.top/d/ce/pan.huang1111.cn_s_oXG1PT8",
+            trailerUrl: "https://pan.gfwl.top/f/OYJwup/Heads.mkv",
             subtitleUrl: 'srt/set.vtt'
         }
     ];
