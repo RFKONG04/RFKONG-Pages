@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 title: movie.title,
                 theme: '#61a0ffff',
                 playbackRate: true,
-                screenshot: true,
                 hotkey: true,
                 fullscreen: true,
                 pip: true,
